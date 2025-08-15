@@ -6,48 +6,30 @@ import { listTools } from "./data";
 function App() {
   return (
     <>
-      {/* Hero Section */}
-      <div className="hero grid md:grid-cols-2 pt-10 items-center xl:gap-0 gap-6 grid-cols-1">
-        <div>
-          <div className="flex items-center gap-3 mb-6 bg-zinc-700 w-fit p-4 rounded-2xl">
-            <img
-              src={DataImage.HeroImage}
-              alt="Hero Image"
-              className="w-10 rounded-md"
-              loading="lazy"
-            />
-            <q>Rajin Pangkal Pandai🔥</q>
-          </div>
-          <h1 className="text-5xl/tight font-bold mb-6">
-            Hi, Saya Bayu Erfan Ramadani
+      {/* New Hero Section  */}
+      <section className="hero relative flex flex-col items-center justify-center min-h-screen overflow-hidden ">
+        <div className="max-w-4xl w-full mx-auto text-center px-6">
+          <h1 className="text-3xl md:text-5xl font-bold text-white mb-4">
+            Hello, I'm Bayu Erfan a Junior Product Manager.
           </h1>
-          <p className="text-base/loose mb-6 opacity-50">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores
-            voluptate ratione impedit ut quisquam adipisci accusantium
-            cupiditate error quis eius?
+          <h2 className="text-2xl md:text-4xl font-semibold text-amber-200 mb-6">
+            Focused on learning and applying Product Management in real
+            projects.
+          </h2>
+          <p className="max-w-2xl mx-auto text-base text-gray-700 mb-8">
+            Learning the ropes of Product Management through mobile and web
+            projects. I thrive on understanding users, aligning teams, and
+            crafting roadmaps for impactful solutions.
           </p>
-          <div className="flex items-center md:gap-4 gap-2">
-            <a
-              href="https://flowcv.com/resume/m7plm8mhowp4"
-              className="bg-violet-700 p-4 rounded-2xl hover:bg-violet-600"
-            >
-              Download Cv <i class="ri-file-download-line"></i>
-            </a>
-            <a
-              href="#"
-              className="bg-zinc-700 p-4 rounded-2xl hover:bg-zinc-600"
-            >
-              Lihat Project <i class="ri-archive-drawer-line"></i>
-            </a>
-          </div>
+          <a
+            href="#projects"
+            className="inline-flex items-center gap-2 px-6 py-2 border border-gray-900 rounded-full hover:bg-neutral-500 hover:text-white transition-colors bg-neutral-700"
+          >
+            See Project <i class="ri-puzzle-line"></i>
+          </a>
         </div>
-        <img
-          src={DataImage.HeroImage}
-          alt="Hero Image"
-          className="w-[500px] md:ml-auto"
-        />
-      </div>
-      {/* Hero Section */}
+      </section>
+      {/* New Hero Section */}
 
       {/* Tentang Section */}
       <div className="tentang mt-30 py-10 ">
@@ -83,7 +65,6 @@ function App() {
         </div>
       </div>
       {/* Tentang Section */}
-
       {/* Skill Section */}
       <div className="Skill mt-32">
         <h1 className="text-4xl/snug font-bold mb-4">Skill yang dikuasai</h1>
@@ -111,7 +92,6 @@ function App() {
         </div>
       </div>
       {/* Skill Section */}
-
       {/* Proyek Section */}
       <div className="proyek mt-32 py-10">
         <h1 className="text-center text-4xl font-bold mb-2">Proyek</h1>
@@ -150,7 +130,6 @@ function App() {
         </div>
       </div>
       {/* Proyek Section */}
-
       {/* kontak Section */}
       <div className="kontak mt-32 sm:p-10 p-0">
         <h1 className="text-4xl mb-2 font-bold text-center">Kontak</h1>

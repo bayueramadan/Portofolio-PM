@@ -24,7 +24,7 @@ const Navbar = () => {
     <div className="navbar py-7 flex items-center justify-between">
       <div className="logo">
         <h1 className="text-3xl font-bold bg-white text-black p-1 md:bg-transparent md:text-white">
-          Portofolio
+          Bayu Erfan
         </h1>
       </div>
       <ul
@@ -34,12 +34,7 @@ const Navbar = () => {
       >
         <li>
           <a href="#" className="sm:text-lg text-base font-medium">
-            Beranda
-          </a>
-        </li>
-        <li>
-          <a href="#" className="sm:text-lg text-base font-medium">
-            Tentang
+            About Me
           </a>
         </li>
         <li>
@@ -49,7 +44,15 @@ const Navbar = () => {
         </li>
         <li>
           <a href="#" className="sm:text-lg text-base font-medium">
-            Kontak
+            Blog
+          </a>
+        </li>
+        <li>
+          <a
+            href="#"
+            className="sm:text-lg text-base font-medium bg-neutral-700 p-1 rounded-lg"
+          >
+            <i class="ri-linkedin-box-fill"></i>
           </a>
         </li>
       </ul>
