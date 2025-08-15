@@ -5,7 +5,7 @@ import styled from "styled-components";
 const Preloader = () => {
   const [loading, setLoading] = useState(true);
   useEffect(() => {
-    setTimeout(() => setLoading(false), 3000);
+    setTimeout(() => setLoading(false), 2000);
   });
 
   return (

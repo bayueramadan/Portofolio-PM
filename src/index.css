@@ -5,3 +5,11 @@
     font-family: "Onest", sans-serif;
   }
 }
+
+@theme {
+  --color-primary: #1e2027;
+  --color-secondary: #f2a311;
+  --color-tertiary: #ffffff;
+  --color-aksen1: #7c68f4;
+  --color-aksen2: #494b4b;
+}
