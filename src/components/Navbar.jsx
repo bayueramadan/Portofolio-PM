@@ -23,34 +23,43 @@ const Navbar = () => {
   return (
     <div className="navbar py-7 flex items-center justify-between">
       <div className="logo">
-        <h1 className="text-3xl font-bold bg-white text-black p-1 md:bg-transparent md:text-white">
+        <h1 className="text-3xl font-bold bg-white text-black p-1 md:bg-transparent md:text-cadangan">
           Bayu Erfan
         </h1>
       </div>
       <ul
-        className={`menu flex items-center sm:gap-10  gap-4 md:static fixed left-1/2 -translate-x-1/2 md:-translate-x-0 md:opacity-100 bg-white/30 backdrop-blur-md p-4 rounded-br-2xl rounded-bl-2xl md:bg-transparent transition-all md:transition-0 ${
+        className={` menu flex items-center sm:gap-10  gap-4 md:static fixed left-1/2 -translate-x-1/2 md:-translate-x-0 md:opacity-100 bg-white/30 backdrop-blur-md p-4 rounded-br-2xl rounded-bl-2xl md:bg-transparent transition-all md:transition-0 ${
           active ? "top-0 opacity-100" : "-top-10 opacity-0"
         }`}
       >
         <li>
-          <a href="#" className="sm:text-lg text-base font-medium">
+          <a
+            href="#"
+            className="sm:text-lg text-base font-medium text-cadangan hover:text-white"
+          >
             About Me
           </a>
         </li>
         <li>
-          <a href="#" className="sm:text-lg text-base font-medium">
+          <a
+            href="#"
+            className="sm:text-lg text-base font-medium  text-cadangan hover:text-white"
+          >
             Project
           </a>
         </li>
         <li>
-          <a href="#" className="sm:text-lg text-base font-medium">
+          <a
+            href="#"
+            className="sm:text-lg text-base font-medium  text-cadangan hover:text-white"
+          >
             Blog
           </a>
         </li>
         <li>
           <a
             href="#"
-            className="sm:text-lg text-base font-medium bg-neutral-700 p-1 rounded-lg"
+            className="sm:text-lg text-base font-medium bg-utama-down px-3 py-1 rounded-lg  hover:bg-aksen hover:text-black transform duration-400 ease-in-out hover:scale-105"
           >
             <i class="ri-linkedin-box-fill"></i>
           </a>

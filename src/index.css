@@ -5,3 +5,12 @@
     font-family: "Onest", sans-serif;
   }
 }
+
+@theme {
+  --color-utama-up: #08090c;
+  --color-utama: #1a2130;
+  --color-utama-down: #004140;
+  --color-cadangan: #83b4ff;
+  --color-aksen: #fdffe2;
+  --color-kiper: #5a72a0;
+}

@@ -2,6 +2,7 @@
 
 import DataImage, { listProyek } from "./data";
 import { listTools } from "./data";
+import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 
 function App() {
   return (
@@ -12,184 +13,182 @@ function App() {
           <h1 className="text-3xl md:text-5xl font-bold text-white mb-4">
             Hello, I'm Bayu Erfan a Junior Product Manager.
           </h1>
-          <h2 className="text-2xl md:text-4xl font-semibold text-amber-200 mb-6">
+          <h2 className="text-1xl md:text-3xl font-semibold text-aksen mb-6">
             Focused on learning and applying Product Management in real
             projects.
           </h2>
-          <p className="max-w-2xl mx-auto text-base text-gray-700 mb-8">
-            Learning the ropes of Product Management through mobile and web
-            projects. I thrive on understanding users, aligning teams, and
-            crafting roadmaps for impactful solutions.
-          </p>
-          <a
-            href="#projects"
-            className="inline-flex items-center gap-2 px-6 py-2 border border-gray-900 rounded-full hover:bg-neutral-500 hover:text-white transition-colors bg-neutral-700"
-          >
-            See Project <i class="ri-puzzle-line"></i>
-          </a>
+          <div className="gap-5 flex justify-center">
+            <a
+              href="#projects"
+              className=" px-6 mt-10 py-2 border border-gray-900 rounded-full hover:bg-aksen hover:text-black bg-utama-down transform duration-400 ease-in-out hover:scale-105"
+            >
+              Download My Cv <i class="ri-profile-line"></i>
+            </a>
+            <a
+              href="#projects"
+              className=" px-6 mt-10 py-2 border border-gray-900 rounded-full hover:bg-cadangan hover:text-white bg-utama-down transform duration-400 ease-in-out hover:scale-105"
+            >
+              See My Projects <i class="ri-puzzle-line"></i>
+            </a>
+          </div>
         </div>
       </section>
       {/* New Hero Section */}
 
-      {/* Tentang Section */}
-      <div className="tentang mt-30 py-10 ">
-        {/* Deskripsi About */}
-        {/* ganti responsif */}
-        <div className="xl:w-2/3 lg:w-3/4 mx-auto p-7 bg-zinc-800 rounded-lg">
-          <p className="text-base/loose mb-10">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem
-            expedita quod fugiat amet voluptate voluptas enim ratione quas,
-            placeat doloribus non aliquam quibusdam laudantium quia deleniti
-            dolor rem cumque magnam? Eveniet, earum, repellendus ad amet ut in
-            voluptatibus maxime voluptate, aliquam vel laudantium natus
-            temporibus possimus quibusdam dolores tempore. Sed!
-          </p>
-          <div>
-            <img
-              src={DataImage.HeroImage}
-              alt="Image"
-              className="w-12 rounded-md"
-              loading="lazy"
-            />
-            <div>
-              <div>
-                <h1>12 +</h1>
-              </div>
-              <p>Project selesai</p>
-              <div>
-                <h1>5 +</h1>
-              </div>
-              <p>Project mangkrak</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      {/* Tentang Section */}
-      {/* Skill Section */}
-      <div className="Skill mt-32">
-        <h1 className="text-4xl/snug font-bold mb-4">Skill yang dikuasai</h1>
-        <p className="xl:w-2/5 lg:w-2/4 md:w-2/3 sm:w-3/4 w-full text-base/loose opacity-50">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, optio
-          alias. Culpa harum nihil quod amet magnam ratione rem quae!
-        </p>
-        <div className="skill-set mt-14 grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-1 gap-4">
-          {listTools.map((tool) => (
-            <div
-              className="flex items-center gap-2 p-3 border border-zinc-600 rounded-md hover:bg-zinc-800 group"
-              key={tool.id}
-            >
-              <img
-                src={tool.gambar}
-                alt="Skill"
-                className="w-14 bg-zinc-800 p-1 group-hover:bg-zinc-900"
-              />
-              <div>
-                <h4 className="font-bold">{tool.nama}</h4>
-                <p className="opacity-50">{tool.ket}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-      {/* Skill Section */}
       {/* Proyek Section */}
-      <div className="proyek mt-32 py-10">
-        <h1 className="text-center text-4xl font-bold mb-2">Proyek</h1>
-        <p className="text-base/loose text-center opacity-50">
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laborum
-          quod, exercitationem eaque eius labore nihil?
+      <div className="proyek py-10">
+        <h1 className="text-center text-4xl font-bold mb-2">
+          Highlight Project and Case Study
+        </h1>
+        <p className="max-w-2xl mx-auto text-base text-white/50 mb-8 text-center">
+          Learning the ropes of Product Management through mobile and web
+          projects. I thrive on understanding users, aligning teams, and
+          crafting roadmaps for impactful solutions.
         </p>
-        <div className="proyek-box mt-14 grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-4">
+
+        <div className="proyek-box mt-14 space-y-8">
           {listProyek.map((proyek) => (
-            <div key={proyek.id} className="p-4 bg-zinc-800 rounded-md">
-              <img src={proyek.gambar} alt="Proyek Image" loading="lazy" />
-              <div>
-                <h1 className="text-2xl font-bold my-4">{proyek.nama}</h1>
-                <p className="text-base/loose mb-4">{proyek.desk}</p>
-                <div className="flex flex-wrap gap-2">
+            <div
+              key={proyek.id}
+              className="grid grid-cols-12 gap-6 p-6 bg-kiper rounded-lg items-center"
+            >
+              {/* Gambar */}
+              <div className="col-span-12 md:col-span-4">
+                <a href="#LinkProject">
+                  <img
+                    src={proyek.gambar}
+                    alt="Proyek Image"
+                    loading="lazy"
+                    className="rounded-md w-full h-48 object-cover transform transition duration-300 ease-in-out hover:scale-110"
+                  />
+                </a>
+              </div>
+
+              {/* Konten */}
+              <div className="col-span-12 md:col-span-8">
+                <h1 className="text-2xl font-bold mb-3">{proyek.nama}</h1>
+
+                {/* Tools */}
+                <div className="flex flex-wrap gap-2 mb-3">
                   {proyek.tools.map((tool, index) => (
                     <p
-                      className="py-1 px-3 border border-zinc-500 bg-zinc-600 rounded-md font-semibold"
+                      className="py-1 px-3 border border-zinc-500 bg-utama rounded-md font-semibold"
                       key={index}
                     >
                       {tool}
                     </p>
                   ))}
                 </div>
-                <div className="mt-8 text-center">
-                  <a
-                    href="#"
-                    className="bg-violet-500 p-3 rounded-lg block border border-zinc-600 hover:bg-violet-400"
-                  >
-                    Lihat Proyek
-                  </a>
-                </div>
+
+                {/* Deskripsi */}
+                <p className="text-base mb-4">{proyek.desk}</p>
               </div>
             </div>
           ))}
         </div>
+        <div className="flex items-center justify-center grid-cols-12 pt-8">
+          <a
+            href="#projects"
+            className="items-center gap-2 px-6 py-2 border border-gray-900 rounded-full bg-utama-down hover:text-white transition-colors hover:bg-cadangan"
+          >
+            See All Projects <i class="ri-puzzle-line"></i>
+          </a>
+        </div>
       </div>
       {/* Proyek Section */}
-      {/* kontak Section */}
-      <div className="kontak mt-32 sm:p-10 p-0">
-        <h1 className="text-4xl mb-2 font-bold text-center">Kontak</h1>
-        <p className="text-base/loose text-center mb-10  opacity-50">
-          mari terhubung dengan saya
-        </p>
-        <form
-          action=""
-          className="bg-zinc-800 p-10 md:w-fit w-full mx-auto rounded-md"
-          autoComplete="off"
-        >
-          <div className="flex flex-col gap-6 ">
-            <div className="flex flex-col gap-2">
-              <label htmlFor="nama" className="font-semibold ">
-                Nama
-              </label>
-              <input
-                type="text"
-                name="nama"
-                placeholder="Ketikan Nama Anda"
-                required
-                className="border border-zinc-500 p-2 rounded-md"
+
+      {/* Tentang Section */}
+      <section className="w-full py-10">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-12">
+            {/* Kiri: Teks */}
+            <div className="md:col-span-7 flex flex-col justify-center bg-aksen text-black p-6 rounded-l-lg h-auto md:h-[450px]">
+              <p className="text-lg leading-relaxed mb-6 break-words text-justify">
+                Detail-oriented professional with 2 years of experience in
+                manufacturing operations at PT Denso Indonesia, where I focused
+                on process efficiency and team coordination. Now transitioning
+                into Product Management, I bring strong analytical thinking,
+                collaboration skills, and a continuous improvement mindset.
+                Skilled in tools like Figma and Notion, and passionate about
+                solving user problems to create impactful products.
+              </p>
+              <div className="flex justify-center">
+                <a
+                  className="px-6 py-3 hover:bg-utama hover:text-white bg-cadangan border rounded-md  transition"
+                  href="#"
+                >
+                  Get to Know Me &gt;
+                </a>
+              </div>
+            </div>
+
+            {/* Kanan: Gambar */}
+            <div className="md:col-span-5 flex items-center justify-center text-black bg-aksen rounded-r-lg h-auto md:h-[450px]">
+              <DotLottieReact
+                src="https://lottie.host/198fa489-43ad-400e-b272-5668e10e1659/cfxs4z6ing.lottie"
+                loop
+                autoplay
               />
-            </div>
-            <div className="flex flex-col gap-2">
-              <label htmlFor="email" className="font-semibold">
-                e-Mail
-              </label>
-              <input
-                type="text"
-                name="nama"
-                placeholder="Masukan Email anda"
-                className="border border-zinc-500 p-2 rounded-md"
-              />
-            </div>
-            <div className="flex flex-col gap-2">
-              <label htmlFor="pesan" className="font-semibold">
-                pesan
-              </label>
-              <textarea
-                name="pesan"
-                id="pesan"
-                placeholder="masukan Pesan anda"
-                cols={30}
-                rows={10}
-                className="border border-zinc-500 p-2 rounded-md"
-                required
-              ></textarea>
-            </div>
-            <div>
-              <button
-                type="Submit"
-                className="font-semibold cursor-pointer bg-violet-500 p-3 rounded-lg block border border-zinc-600 hover:bg-violet-400"
-              >
-                Kirim Pesan
-              </button>
             </div>
           </div>
-        </form>
+        </div>
+      </section>
+      {/* Tentang Section */}
+
+      {/* kontak Section */}
+      <div className=" py-16 px-6">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-12 bg-utama-down rounded-2xl shadow-xl/20 p-10 shadow-aksen">
+          {/* Form Section */}
+          <div className="md:col-span-7">
+            <h2 className="text-3xl font-bold text-white mb-6">Contact Me</h2>
+            <form className="space-y-5">
+              <input
+                type="text"
+                placeholder="Type Your Name.."
+                className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none"
+              />
+              <input
+                type="email"
+                placeholder="Type Your Email.."
+                className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none"
+              />
+              <textarea
+                placeholder="Type Your Message"
+                rows="6"
+                className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none"
+              ></textarea>
+              <button
+                type="submit"
+                className="w-full md:w-auto px-6 py-3 bg-gradient-to-r from-blue-500 to-indigo-600 text-white font-semibold rounded-lg shadow-md transform transition-all duration-300 hover:scale-105 hover:shadow-lg"
+              >
+                Send Message <i class="ri-mail-send-line"></i>
+              </button>
+            </form>
+          </div>
+
+          {/* Contact Alternatives */}
+          <div className="md:col-span-5 flex flex-col justify-center space-y-5 text-white">
+            <p className="text-lg">
+              Interested in working together? Let’s connect. You can fill out
+              the form or reach me directly via LinkedIn or email.
+            </p>
+            <div className="space-y-3">
+              <p>
+                <span className="font-semibold">Email:</span>{" "}
+                bayueramadan@gmail.com
+              </p>
+              <p>
+                <span className="font-semibold">LinkedIn:</span> Bayu Erfan
+              </p>
+              <p>
+                <span className="font-semibold">Location:</span> Malang,
+                Indonesia
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
+
       {/* Kontak Section */}
     </>
   );

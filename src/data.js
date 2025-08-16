@@ -138,20 +138,4 @@ export const listProyek = [
     tools: ["Vite", "ReactJS", "Bootstrap", "AOS"],
     dad: "500",
   },
-  {
-    id: 5,
-    gambar: Proyek5,
-    nama: "Web Portfolio",
-    desk: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis, laborum!",
-    tools: ["HTML", "CSS", "Javascript", "Bootsrap"],
-    dad: "600",
-  },
-  {
-    id: 6,
-    gambar: Proyek6,
-    nama: "Company Profile 2.0",
-    desk: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis, laborum!",
-    tools: ["NextJS", "TailwindCSS", "Framermotion"],
-    dad: "700",
-  },
 ];
