@@ -1,15 +1,21 @@
 // Ini adalah bagian Hero, Tentang Section
 
 import DataImage, { listProyek } from "./data";
-import { listTools } from "./data";
+// import { listTools } from "./data";
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
+import AuroraBackground from "./components/Aurora/Aurora";
 
 function App() {
   return (
     <>
       {/* New Hero Section  */}
-      <section className="hero relative flex flex-col items-center justify-center min-h-screen overflow-hidden ">
-        <div className="max-w-4xl w-full mx-auto text-center px-6">
+
+      <section className="hero relative flex flex-col items-center justify-center min-h-screen w-full overflow-hidden pt-[72px]">
+        <div className="absolute top-0 left-0 w-full h-full -z-10">
+          <AuroraBackground />
+        </div>
+
+        <div className="max-w-4xl w-full mx-auto text-center px-6 relative z-10">
           <h1 className="text-3xl md:text-5xl font-bold text-white mb-4">
             Hello, I'm Bayu Erfan a Junior Product Manager.
           </h1>
@@ -33,10 +39,11 @@ function App() {
           </div>
         </div>
       </section>
+
       {/* New Hero Section */}
 
       {/* Proyek Section */}
-      <div className="proyek py-10">
+      <div className="proyek py-10 container mx-auto px-4">
         <h1 className="text-center text-4xl font-bold mb-2">
           Highlight Project and Case Study
         </h1>
@@ -98,7 +105,7 @@ function App() {
       {/* Proyek Section */}
 
       {/* Tentang Section */}
-      <section className="w-full py-10">
+      <section className="w-full py-10 container mx-auto px-4">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-12">
             {/* Kiri: Teks */}
@@ -136,7 +143,7 @@ function App() {
       {/* Tentang Section */}
 
       {/* kontak Section */}
-      <div className=" py-16 px-6">
+      <div className=" py-16 px-6 container mx-auto">
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-12 bg-utama-down rounded-2xl shadow-xl/20 p-10 shadow-aksen">
           {/* Form Section */}
           <div className="md:col-span-7">

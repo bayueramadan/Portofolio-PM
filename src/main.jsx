@@ -11,7 +11,7 @@ import Preloader from "./components/Preloader.jsx";
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <Preloader />
-    <div className="container mx-auto px-4">
+    <div className="">
       <Navbar />
       <App />
       <Footer />
