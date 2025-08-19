@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import "remixicon/fonts/remixicon.css";
 
@@ -29,24 +30,27 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
         {/* Logo */}
-        <h1 className="text-2xl font-bold text-white">Bayu Erfan</h1>
+
+        <Link to="/" className="text-2xl font-bold text-white">
+          Bayu Erfan
+        </Link>
 
         {/* Menu desktop */}
         <ul className="hidden md:flex items-center gap-8 text-white font-medium">
           <li>
-            <a href="#about" className="hover:text-aksen transition-colors">
+            <Link to="/about" className="hover:text-white">
               About Me
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="#projects" className="hover:text-aksen transition-colors">
-              Projects
-            </a>
+            <Link to="/project" className="hover:text-white">
+              Project
+            </Link>
           </li>
           <li>
-            <a href="#blog" className="hover:text-aksen transition-colors">
-              Blog
-            </a>
+            <Link to="/contact" className="hover:text-white">
+              Contact
+            </Link>
           </li>
           <li>
             <a
