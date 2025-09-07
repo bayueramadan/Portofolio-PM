@@ -38,17 +38,17 @@ export default function Navbar() {
         {/* Menu desktop */}
         <ul className="hidden md:flex items-center gap-8 text-white font-medium">
           <li>
-            <Link to="/about" className="hover:text-white">
+            <Link to="/about" className="hover:text-amber-400 ">
               About Me
             </Link>
           </li>
           <li>
-            <Link to="/project" className="hover:text-white">
+            <Link to="/project" className="hover:text-amber-400">
               Project
             </Link>
           </li>
           <li>
-            <Link to="/contact" className="hover:text-white">
+            <Link to="/contact" className="hover:text-amber-400">
               Contact
             </Link>
           </li>

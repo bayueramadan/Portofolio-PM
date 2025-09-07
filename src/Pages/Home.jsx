@@ -12,23 +12,23 @@ function Home() {
         </div>
 
         <div className="max-w-4xl w-full mx-auto text-center px-6 relative z-10">
-          <h1 className="text-3xl md:text-5xl font-bold text-white mb-4">
+          <h1 className="text-3xl md:text-5xl font-bold text-gray-100 mb-4">
             Hello, I'm Bayu Erfan a Junior Product Manager.
           </h1>
-          <h2 className="text-1xl md:text-3xl font-semibold text-aksen mb-6">
+          <h2 className="text-1xl md:text-3xl font-semibold text-gray-400 mb-6">
             Focused on learning and applying Product Management in real
             projects.
           </h2>
           <div className="gap-5 flex justify-center">
             <a
               href="#projects"
-              className=" px-6 mt-10 py-2 border border-gray-900 rounded-full hover:bg-aksen hover:text-black bg-utama-down transform duration-400 ease-in-out hover:scale-105"
+              className=" px-6 mt-10 py-2 border border-gray-900 rounded-full text-zinc-900 hover:bg-amber-300 bg-amber-400 transform duration-400 ease-in-out hover:scale-105"
             >
               Download My Cv <i className="ri-profile-line"></i>
             </a>
             <a
               href="#projects"
-              className=" px-6 mt-10 py-2 border border-gray-900 rounded-full hover:bg-cadangan hover:text-white bg-utama-down transform duration-400 ease-in-out hover:scale-105"
+              className="bg-zinc-800 border border-amber-400 text-amber-400 hover:bg-amber-400 hover:text-zinc-900 px-6 mt-10 py-2 border  rounded-full  transform duration-400 ease-in-out hover:scale-105"
             >
               See My Projects <i className="ri-puzzle-line"></i>
             </a>
@@ -38,10 +38,10 @@ function Home() {
 
       {/* Proyek Section */}
       <div className="proyek py-10 container mx-auto px-4">
-        <h1 className="text-center text-4xl font-bold mb-2">
+        <h1 className="text-center text-4xl font-bold mb-2 text-gray-100">
           Highlight Project and Case Study
         </h1>
-        <p className="max-w-2xl mx-auto text-base text-white/50 mb-8 text-center">
+        <p className="max-w-2xl mx-auto text-base text-gray-400 mb-8 text-center">
           Learning the ropes of Product Management through mobile and web
           projects. I thrive on understanding users, aligning teams, and
           crafting roadmaps for impactful solutions.
@@ -51,7 +51,7 @@ function Home() {
           {listProyek.map((proyek) => (
             <div
               key={proyek.id}
-              className="grid grid-cols-12 gap-6 p-6 bg-kiper rounded-lg items-center"
+              className="grid grid-cols-12 gap-6 p-6 rounded-lg items-center bg-zinc-800 border border-zinc-700"
             >
               {/* Gambar */}
               <div className="col-span-12 md:col-span-4">
@@ -67,22 +67,25 @@ function Home() {
 
               {/* Konten */}
               <div className="col-span-12 md:col-span-8">
-                <h1 className="text-2xl font-bold mb-3">{proyek.nama}</h1>
+                <h1 className="text-2xl font-bold mb-3 text-gray-100">
+                  {proyek.nama}
+                </h1>
 
                 {/* Tools */}
                 <div className="flex flex-wrap gap-2 mb-3">
                   {proyek.tools.map((tool, index) => (
-                    <p
-                      className="py-1 px-3 border border-zinc-500 bg-utama rounded-md font-semibold"
+                    <a
+                      href="#"
                       key={index}
+                      className="py-1 px-3 border bg-zinc-700 text-gray-300 hover:bg-amber-500 hover:text-zinc-900 rounded-md font-semibold"
                     >
                       {tool}
-                    </p>
+                    </a>
                   ))}
                 </div>
 
                 {/* Deskripsi */}
-                <p className="text-base mb-4">{proyek.desk}</p>
+                <p className="text-base mb-4 text-gray-400">{proyek.desk}</p>
               </div>
             </div>
           ))}
@@ -90,7 +93,7 @@ function Home() {
         <div className="flex items-center justify-center grid-cols-12 pt-8">
           <a
             href="#projects"
-            className="items-center gap-2 px-6 py-2 border border-gray-900 rounded-full bg-utama-down hover:text-white transition-colors hover:bg-cadangan"
+            className="items-center bg-zinc-800 border border-amber-400 text-amber-400 hover:bg-amber-400 hover:text-zinc-900 px-6 mt-10 py-2 border  rounded-full  transform duration-400 ease-in-out hover:scale-105"
           >
             See All Projects <i className="ri-puzzle-line"></i>
           </a>
@@ -102,7 +105,7 @@ function Home() {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-12">
             {/* Kiri: Teks */}
-            <div className="md:col-span-7 flex flex-col justify-center bg-aksen text-black p-6 rounded-l-lg h-auto md:h-[450px]">
+            <div className="md:col-span-7 flex flex-col justify-center bg-amber-400 text-black p-6 rounded-l-lg h-auto md:h-[450px]">
               <p className="text-lg leading-relaxed mb-6 break-words text-justify">
                 Detail-oriented professional with 2 years of experience in
                 manufacturing operations at PT Denso Indonesia, where I focused
@@ -114,16 +117,16 @@ function Home() {
               </p>
               <div className="flex justify-center">
                 <a
-                  className="px-6 py-3 hover:bg-utama hover:text-white bg-cadangan border rounded-md  transition"
+                  className="px-6 py-3 bg-zinc-900 text-gray-50 hover:bg-amber-400 hover:text-gray-900 border rounded-md  transition"
                   href="#"
                 >
-                  Get to Know Me &gt;
+                  Get to Know Me <i className="ri-user-3-line"></i>
                 </a>
               </div>
             </div>
 
             {/* Kanan: Gambar */}
-            <div className="md:col-span-5 flex items-center justify-center text-black bg-aksen rounded-r-lg h-auto md:h-[450px]">
+            <div className="md:col-span-5 flex items-center justify-center text-black bg-amber-400 rounded-r-lg h-auto md:h-[450px]">
               <DotLottieReact
                 src="https://lottie.host/198fa489-43ad-400e-b272-5668e10e1659/cfxs4z6ing.lottie"
                 loop
@@ -174,7 +177,7 @@ function Home() {
             <div className="space-y-3">
               <p>
                 <span className="font-semibold">Email:</span>{" "}
-                bayueramadan@gmail.com
+                hello@bayuerfan.com
               </p>
               <p>
                 <span className="font-semibold">LinkedIn:</span> Bayu Erfan
