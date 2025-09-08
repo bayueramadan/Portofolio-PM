@@ -1,8 +1,14 @@
 import DataImage, { listProyek } from "../data";
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 import AuroraBackground from "../components/Aurora/Aurora";
+import SplitText from "../Animation/Splittext";
+import AnimatedList from "../Animation/AnimatedList";
 
-function Home() {
+const handleAnimationComplete = () => {
+  console.log("All letters have animated!");
+};
+
+function Home({ startAnimation }) {
   return (
     <>
       {/* New Hero Section  */}
@@ -13,7 +19,19 @@ function Home() {
 
         <div className="max-w-4xl w-full mx-auto text-center px-6 relative z-10">
           <h1 className="text-3xl md:text-5xl font-bold text-gray-100 mb-4">
-            Hello, I'm Bayu Erfan a Junior Product Manager.
+            <SplitText
+              text="Hello, I'm Bayu Erfan 👋"
+              delay={100}
+              duration={0.6}
+              ease="power3.out"
+              splitType="chars"
+              from={{ opacity: 0, y: 40 }}
+              to={{ opacity: 1, y: 0 }}
+              threshold={0}
+              rootMargin="0px"
+              textAlign="center"
+              onLetterAnimationComplete={handleAnimationComplete}
+            />
           </h1>
           <h2 className="text-1xl md:text-3xl font-semibold text-gray-400 mb-6">
             Focused on learning and applying Product Management in real
@@ -35,18 +53,19 @@ function Home() {
           </div>
         </div>
       </section>
-
-      {/* Proyek Section */}
+      {/* Proyek Section */}{" "}
       <div className="proyek py-10 container mx-auto px-4">
+        {" "}
         <h1 className="text-center text-4xl font-bold mb-2 text-gray-100">
-          Highlight Project and Case Study
-        </h1>
+          {" "}
+          Highlight Project and Case Study{" "}
+        </h1>{" "}
         <p className="max-w-2xl mx-auto text-base text-gray-400 mb-8 text-center">
+          {" "}
           Learning the ropes of Product Management through mobile and web
           projects. I thrive on understanding users, aligning teams, and
-          crafting roadmaps for impactful solutions.
+          crafting roadmaps for impactful solutions.{" "}
         </p>
-
         <div className="proyek-box mt-14 space-y-8">
           {listProyek.map((proyek) => (
             <div
@@ -99,7 +118,6 @@ function Home() {
           </a>
         </div>
       </div>
-
       {/* Tentang Section */}
       <section className="w-full py-10 container mx-auto px-4">
         <div className="container mx-auto px-4">
@@ -136,7 +154,6 @@ function Home() {
           </div>
         </div>
       </section>
-
       {/* Kontak Section */}
       <div className=" py-16 px-6 container mx-auto">
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-12 bg-utama-down rounded-2xl shadow-xl/20 p-10 shadow-aksen">

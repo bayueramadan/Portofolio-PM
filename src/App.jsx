@@ -66,7 +66,7 @@ function App() {
                 path="/"
                 element={
                   <PageWrapper>
-                    <Home />
+                    <Home startAnimation={!loading} />
                   </PageWrapper>
                 }
               />
