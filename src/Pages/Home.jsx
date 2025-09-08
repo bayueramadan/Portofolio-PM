@@ -33,20 +33,20 @@ function Home({ startAnimation }) {
               onLetterAnimationComplete={handleAnimationComplete}
             />
           </h1>
-          <h2 className="text-1xl md:text-3xl font-semibold text-gray-400 mb-6">
+          <h2 className="text-base md:text-3xl font-semibold text-gray-400 mb-6">
             Focused on learning and applying Product Management in real
             projects.
           </h2>
           <div className="gap-5 flex justify-center">
             <a
               href="#projects"
-              className="mt-10 bg-zinc-900  border border-amber-500  text-amber-500 font-semibold  px-5 py-2 rounded-lg  transition-all duration-300 ease-in-out hover:bg-gradient-to-r hover:from-yellow-400 hover:via-amber-500 hover:to-lime-500  hover:text-white hover:scale-105 hover:shadow-md hover:shadow-lime-500/40  active:scale-95"
+              className="mt-30 bg-zinc-900  border border-amber-500  text-amber-500 font-semibold  px-5 py-2 rounded-lg  transition-all duration-300 ease-in-out hover:bg-gradient-to-r hover:from-yellow-400 hover:via-amber-500 hover:to-lime-500  hover:text-white hover:scale-105 hover:shadow-md hover:shadow-lime-500/40  active:scale-95"
             >
-              Download My Cv <i className="ri-profile-line"></i>
+              Let’s Collaborate <i className="ri-profile-line"></i>
             </a>
             <a
               href="#projects"
-              className="items-center mt-10 bg-gradient-to-r from-amber-400 via-orange-500 to-rose-500 text-white font-semibold px-5 py-2 rounded-lg shadow-md shadow-orange-500/30 transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-lg hover:shadow-orange-500/50  active:scale-95"
+              className="items-center mt-30 bg-gradient-to-r from-amber-400 via-orange-500 to-rose-500 text-white font-semibold px-5 py-2 rounded-lg shadow-md shadow-orange-500/30 transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-lg hover:shadow-orange-500/50  active:scale-95"
             >
               See My Projects <i className="ri-puzzle-line"></i>
             </a>
