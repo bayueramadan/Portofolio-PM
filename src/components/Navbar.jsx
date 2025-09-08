@@ -32,6 +32,11 @@ export default function Navbar() {
         {/* Logo */}
 
         <Link to="/" className="text-2xl font-bold text-white">
+          <img
+            src="/assets/bayu.jpg"
+            alt=""
+            className="w-10 h-10 rounded-full inline-block mr-2"
+          />
           Bayu Erfan
         </Link>
 
@@ -111,7 +116,7 @@ export default function Navbar() {
           </a>
           <a
             href="#linkedin"
-            className="block text-lg font-medium bg-zinc-800 px-3 py-2 rounded-lg hover:text-amber-400 hover:text-black text-center"
+            className="block text-lg font-medium bg-zinc-800 px-3 py-2 rounded-lg hover:text-amber-400 text-black text-center"
             onClick={() => setIsOpen(false)}
           >
             <i className="ri-linkedin-box-fill"></i>
