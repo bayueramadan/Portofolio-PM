@@ -119,7 +119,7 @@ function Home({ startAnimation }) {
         </div>
       </div>
       {/* Tentang Section */}
-      <section className="w-full py-10 container mx-auto px-4">
+      <section className="w-full py-10 container mx-auto px-4 mt-20">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-12">
             {/* Kiri: Teks */}
@@ -156,7 +156,7 @@ function Home({ startAnimation }) {
       </section>
       {/* Kontak Section */}
       <div className=" py-16 px-6 container mx-auto">
-        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-12 bg-utama-down rounded-2xl shadow-xl/20 p-10 shadow-aksen">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-12 bg-zinc-800 rounded-2xl shadow-xl/20 p-10 shadow-amber-400">
           {/* Form Section */}
           <div className="md:col-span-7">
             <h2 className="text-3xl font-bold text-white mb-6">Contact Me</h2>

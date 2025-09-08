@@ -18,7 +18,7 @@ const Preloader = ({ readyToExit, onExit }) => {
         src="https://lottie.host/2abdb104-2f1d-4745-825c-17f0591077e9/EJcgY33d0p.lottie"
         loop
         autoplay
-        style={{ width: "200px", height: "200px" }}
+        style={{ width: "350px", height: "350px" }}
       />
     </motion.div>
   );

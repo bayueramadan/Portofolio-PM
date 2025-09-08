@@ -55,7 +55,7 @@ export default function Navbar() {
           <li>
             <a
               href="#linkedin"
-              className="px-3 py-1 rounded-lg bg-utama-down hover:bg-aksen hover:text-black transform duration-300 ease-in-out hover:scale-105"
+              className="px-3 py-1 rounded-lg bg-zinc-800 hover:bg-amber-400 hover:text-black transform duration-300 ease-in-out hover:scale-105"
             >
               <i className="ri-linkedin-box-fill"></i>
             </a>
@@ -81,28 +81,28 @@ export default function Navbar() {
         <div className="md:hidden bg-black/70 backdrop-blur-lg text-white px-6 py-6 space-y-4">
           <a
             href="#about"
-            className="block text-lg font-medium hover:text-aksen transition-colors"
+            className="block text-lg font-medium hover:text-amber-400 transition-colors"
             onClick={() => setIsOpen(false)}
           >
             About Me
           </a>
           <a
             href="#projects"
-            className="block text-lg font-medium hover:text-aksen transition-colors"
+            className="block text-lg font-medium hover:text-amber-400 transition-colors"
             onClick={() => setIsOpen(false)}
           >
             Projects
           </a>
           <a
             href="#blog"
-            className="block text-lg font-medium hover:text-aksen transition-colors"
+            className="block text-lg font-medium hover:text-amber-400 transition-colors"
             onClick={() => setIsOpen(false)}
           >
             Blog
           </a>
           <a
             href="#linkedin"
-            className="block text-lg font-medium bg-utama-down px-3 py-2 rounded-lg hover:bg-aksen hover:text-black text-center"
+            className="block text-lg font-medium bg-zinc-800 px-3 py-2 rounded-lg hover:text-amber-400 hover:text-black text-center"
             onClick={() => setIsOpen(false)}
           >
             <i className="ri-linkedin-box-fill"></i>
