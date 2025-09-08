@@ -22,13 +22,13 @@ function Home() {
           <div className="gap-5 flex justify-center">
             <a
               href="#projects"
-              className=" px-6 mt-10 py-2 border border-gray-900 rounded-full text-zinc-900 hover:bg-amber-300 bg-amber-400 transform duration-400 ease-in-out hover:scale-105"
+              className="mt-10 bg-zinc-900  border border-amber-500  text-amber-500 font-semibold  px-5 py-2 rounded-lg  transition-all duration-300 ease-in-out hover:bg-gradient-to-r hover:from-yellow-400 hover:via-amber-500 hover:to-lime-500  hover:text-white hover:scale-105 hover:shadow-md hover:shadow-lime-500/40  active:scale-95"
             >
               Download My Cv <i className="ri-profile-line"></i>
             </a>
             <a
               href="#projects"
-              className="bg-zinc-800 border border-amber-400 text-amber-400 hover:bg-amber-400 hover:text-zinc-900 px-6 mt-10 py-2 border  rounded-full  transform duration-400 ease-in-out hover:scale-105"
+              className="items-center mt-10 bg-gradient-to-r from-amber-400 via-orange-500 to-rose-500 text-white font-semibold px-5 py-2 rounded-lg shadow-md shadow-orange-500/30 transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-lg hover:shadow-orange-500/50  active:scale-95"
             >
               See My Projects <i className="ri-puzzle-line"></i>
             </a>
@@ -93,7 +93,7 @@ function Home() {
         <div className="flex items-center justify-center grid-cols-12 pt-8">
           <a
             href="#projects"
-            className="items-center bg-zinc-800 border border-amber-400 text-amber-400 hover:bg-amber-400 hover:text-zinc-900 px-6 mt-10 py-2 border  rounded-full  transform duration-400 ease-in-out hover:scale-105"
+            className="items-center mt-10 bg-gradient-to-r from-amber-400 via-orange-500 to-rose-500 text-white font-semibold px-5 py-2 rounded-lg shadow-md shadow-orange-500/30 transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-lg hover:shadow-orange-500/50  active:scale-95"
           >
             See All Projects <i className="ri-puzzle-line"></i>
           </a>
@@ -117,7 +117,7 @@ function Home() {
               </p>
               <div className="flex justify-center">
                 <a
-                  className="px-6 py-3 bg-zinc-900 text-gray-50 hover:bg-amber-400 hover:text-gray-900 border rounded-md  transition"
+                  className="mt-10 bg-zinc-900  border border-amber-500  text-amber-500 font-semibold  px-5 py-2 rounded-lg  transition-all duration-300 ease-in-out hover:bg-gradient-to-r hover:from-yellow-400 hover:via-amber-500 hover:to-lime-500  hover:text-white hover:scale-105 hover:shadow-md hover:shadow-lime-500/40  active:scale-95 hover:border--5"
                   href="#"
                 >
                   Get to Know Me <i className="ri-user-3-line"></i>
@@ -161,7 +161,8 @@ function Home() {
               ></textarea>
               <button
                 type="submit"
-                className="w-full md:w-auto px-6 py-3 bg-gradient-to-r from-blue-500 to-indigo-600 text-white font-semibold rounded-lg shadow-md transform transition-all duration-300 hover:scale-105 hover:shadow-lg"
+                cursor="pointer"
+                className="w-full md:w-auto mt-10 bg-gradient-to-r from-amber-400 via-orange-500 to-rose-500 text-white font-semibold px-5 py-2 rounded-lg shadow-md shadow-orange-500/30 transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-lg hover:shadow-orange-500/50  active:scale-95"
               >
                 Send Message <i className="ri-mail-send-line"></i>
               </button>
