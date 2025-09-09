@@ -128,7 +128,7 @@ function TransitionOverlay() {
       animate={{ y: "-100%" }}
       exit={{ y: "-100%" }}
       transition={{ duration: 1.5, ease: "easeInOut" }}
-      className="fixed top-0 left-0 w-full h-full bg-amber-400 z-50 pointer-events-none rounded-t-[3rem] rounded-b-[3rem] overflow-hidden"
+      className="fixed inset-0 w-screen h-screen bg-amber-400 z-[9999] pointer-events-none overflow-hidden md:rounded-t-[3rem] md:rounded-b-[3rem] border-t-4 border-b-4 border-black"
     />
   );
 }

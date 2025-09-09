@@ -1,4 +1,6 @@
 import { Link } from "react-router-dom";
+import { motion, AnimatePresence } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import "remixicon/fonts/remixicon.css";
 
@@ -6,6 +8,14 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [showNavbar, setShowNavbar] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
+
+  const navigate = useNavigate();
+  const handleNav = (to) => (e) => {
+    e.preventDefault();
+    setIsOpen(false); // tutup burger setelah klik
+    navigate(to); // pindah route
+    window.scrollTo(0, 0); // scroll ke atas
+  };
 
   // logic hide/show saat scroll
   useEffect(() => {
@@ -43,29 +53,32 @@ export default function Navbar() {
         {/* Menu desktop */}
         <ul className="hidden md:flex items-center gap-8 text-white font-medium">
           <li>
-            <Link
-              to="/about"
-              className="inline-block transition-all duration-300 ease-in-out hover:scale-110 hover:font-bold hover:text-black "
+            <button
+              onClick={handleNav("/about")}
+              className="inline-block transition-all duration-300 ease-in-out hover:scale-110 hover:font-bold hover:text-black cursor-pointer"
             >
               About Me
-            </Link>
+            </button>
           </li>
+
           <li>
-            <Link
-              to="/project"
-              className="inline-block transition-all duration-300 ease-in-out hover:scale-110 hover:font-bold hover:text-black"
+            <button
+              onClick={handleNav("/project")}
+              className="inline-block transition-all duration-300 ease-in-out hover:scale-110 hover:font-bold hover:text-black cursor-pointer"
             >
               Project
-            </Link>
+            </button>
           </li>
+
           <li>
-            <Link
-              to="/contact"
-              className="inline-block transition-all duration-300 ease-in-out hover:scale-110 hover:font-bold hover:text-black"
+            <button
+              onClick={handleNav("/contact")}
+              className="inline-block transition-all duration-300 ease-in-out hover:scale-110 hover:font-bold hover:text-black cursor-pointer"
             >
               Contact
-            </Link>
+            </button>
           </li>
+
           <li>
             <a
               href="#linkedin"
@@ -78,51 +91,54 @@ export default function Navbar() {
 
         {/* Burger button mobile */}
         <button
-          className="md:hidden text-white text-2xl"
+          type="button"
           onClick={() => setIsOpen(!isOpen)}
-          aria-label="Toggle menu"
+          className="md:hidden text-3xl z-50"
         >
           {isOpen ? (
-            <i className="ri-close-line"></i>
+            <i className="ri-close-fill"></i>
           ) : (
             <i className="ri-menu-line"></i>
           )}
         </button>
       </div>
-
       {/* Mobile menu */}
-      {isOpen && (
-        <div className="md:hidden bg-black/70 backdrop-blur-lg text-white px-6 py-6 space-y-4">
-          <a
-            href="#about"
-            className="block text-lg font-medium hover:text-amber-400 transition-colors"
-            onClick={() => setIsOpen(false)}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.3, ease: "easeInOut" }}
+            className="absolute top-full left-0 w-full bg-black/40 rounded-md backdrop-blur-lg text-white px-6 py-6 space-y-4 md:hidden z-40"
           >
-            About Me
-          </a>
-          <a
-            href="#projects"
-            className="block text-lg font-medium hover:text-amber-400 transition-colors"
-            onClick={() => setIsOpen(false)}
-          >
-            Projects
-          </a>
-          <a
-            href="#blog"
-            className="block text-lg font-medium hover:text-amber-400 transition-colors"
-            onClick={() => setIsOpen(false)}
-          >
-            Blog
-          </a>
-          <a
-            href="#linkedin"
-            className="block text-lg font-medium bg-zinc-800 px-3 py-2 rounded-lg hover:text-amber-400 text-black text-center"
-            onClick={() => setIsOpen(false)}
-          >
-            <i className="ri-linkedin-box-fill"></i>
-          </a>
-        </div>
-      )}
+            <button
+              onClick={handleNav("/about")}
+              className="block text-lg font-medium hover:text-amber-400 transition-colors"
+            >
+              About Me
+            </button>
+            <button
+              onClick={handleNav("/project")}
+              className="block text-lg font-medium hover:text-amber-400 transition-colors"
+            >
+              Projects
+            </button>
+            <button
+              onClick={handleNav("/contact")}
+              className="block text-lg font-medium hover:text-amber-400 transition-colors"
+            >
+              Contact
+            </button>
+            <a
+              href="https://linkedin.com/in/your-profile"
+              className="block text-lg font-medium bg-zinc-800 px-3 py-2 rounded-lg hover:text-amber-400 text-center"
+            >
+              <i className="ri-linkedin-box-fill"></i>
+            </a>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </nav>
   );
 }

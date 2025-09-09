@@ -179,7 +179,7 @@ function Home({ startAnimation }) {
               <button
                 type="submit"
                 cursor="pointer"
-                className="w-full md:w-auto mt-10 bg-gradient-to-r from-amber-400 via-orange-500 to-rose-500 text-white font-semibold px-5 py-2 rounded-lg shadow-md shadow-orange-500/30 transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-lg hover:shadow-orange-500/50  active:scale-95"
+                className="w-full cursor-pointer md:w-auto mt-10 bg-gradient-to-r from-amber-400 via-orange-500 to-rose-500 text-white font-semibold px-5 py-2 rounded-lg shadow-md shadow-orange-500/30 transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-lg hover:shadow-orange-500/50  active:scale-95"
               >
                 Send Message <i className="ri-mail-send-line"></i>
               </button>
