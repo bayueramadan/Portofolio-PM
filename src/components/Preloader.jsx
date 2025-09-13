@@ -10,7 +10,7 @@ const Preloader = ({ readyToExit, onExit }) => {
       onAnimationComplete={() => {
         if (readyToExit) onExit();
       }}
-      className={`fixed inset-0 z-[9999] bg-amber-400 flex items-center justify-center ${
+      className={`fixed inset-0 z-[9999] bg-warna-abu flex items-center justify-center ${
         readyToExit ? "rounded-b-[3rem]" : ""
       }`}
     >

@@ -19,7 +19,7 @@ function App() {
 
   // minimal 5 detik
   useEffect(() => {
-    const timer = setTimeout(() => setTimerDone(true), 5000);
+    const timer = setTimeout(() => setTimerDone(true), 3500);
     return () => clearTimeout(timer);
   }, []);
 
@@ -128,7 +128,7 @@ function TransitionOverlay() {
       animate={{ y: "-100%" }}
       exit={{ y: "-100%" }}
       transition={{ duration: 1.5, ease: "easeInOut" }}
-      className="fixed inset-0 w-screen h-screen bg-amber-400 z-[9999] pointer-events-none overflow-hidden md:rounded-t-[3rem] md:rounded-b-[3rem] border-t-4 border-b-4 border-black"
+      className="fixed inset-0 w-screen h-screen bg-warna-abu z-[9999] pointer-events-none overflow-hidden md:rounded-t-[3rem] md:rounded-b-[3rem] border-t-4 border-b-4 border-black"
     />
   );
 }

@@ -5,12 +5,19 @@
     font-family: "Onest", sans-serif;
   }
 }
-/* 
+
 @theme {
-  --color-utama-up: #08090c;
-  --color-utama: #1a2130;
-  --color-utama-down: #004140;
-  --color-cadangan: #83b4ff;
-  --color-aksen: #fdffe2;
-  --color-kiper: #5a72a0;
-} */
+  /* ================================
+     🎨 Warna Utama Portfolio Bayu
+     ================================ */
+
+  --color-warna-terang: #dde1e5; /* 🌤️ Background utama (homepage, section clean) */
+  --color-warna-gelap: #171514; /* 🌑 Background about me, footer, kontras elegan */
+
+  --color-warna-hijau: #00aa13; /* 🟢 Aksen utama (CTA, judul penting, node timeline) */
+  --color-warna-biru: #007acc; /* 🔵 Aksen sekunder (link, hover, tombol alternatif) */
+
+  --color-warna-putih: #fffef8; /* ⚪ Text di background gelap */
+  --color-warna-hitam: #000000; /* ⚫ Text di background terang */
+  --color-warna-abu: #b0b0b0; /* 🌫️ Text sekunder, border halus */
+}

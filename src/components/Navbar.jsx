@@ -55,7 +55,7 @@ export default function Navbar() {
           <li>
             <button
               onClick={handleNav("/about")}
-              className="inline-block transition-all duration-300 ease-in-out hover:scale-110 hover:font-bold hover:text-black cursor-pointer"
+              className="inline-block transition-all duration-300 ease-in-out hover:scale-110 hover:font-bold cursor-pointer"
             >
               About Me
             </button>
@@ -64,7 +64,7 @@ export default function Navbar() {
           <li>
             <button
               onClick={handleNav("/project")}
-              className="inline-block transition-all duration-300 ease-in-out hover:scale-110 hover:font-bold hover:text-black cursor-pointer"
+              className="inline-block transition-all duration-300 ease-in-out hover:scale-110 hover:font-bold cursor-pointer"
             >
               Project
             </button>
@@ -73,7 +73,7 @@ export default function Navbar() {
           <li>
             <button
               onClick={handleNav("/contact")}
-              className="inline-block transition-all duration-300 ease-in-out hover:scale-110 hover:font-bold hover:text-black cursor-pointer"
+              className="inline-block transition-all duration-300 ease-in-out hover:scale-110 hover:font-bold cursor-pointer"
             >
               Contact
             </button>
