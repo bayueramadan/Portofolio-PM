@@ -43,7 +43,7 @@ export default function Navbar() {
 
         <Link to="/" className="text-2xl font-bold text-white">
           <img
-            src="/assets/bayu.jpg"
+            src="/assets/bayu.webp"
             alt=""
             className="w-10 h-10 rounded-full inline-block mr-2"
           />

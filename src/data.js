@@ -109,7 +109,7 @@ export const listProyek = [
   {
     id: 1,
     gambar: Proyek1,
-    nama: "Website Sekolah",
+    nama: "Portfolio Website v1.0",
     desk: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis, laborum!",
     tools: ["HTML", "CSS", "Javascript", "AOS"],
     dad: "200",
@@ -117,7 +117,7 @@ export const listProyek = [
   {
     id: 2,
     gambar: Proyek2,
-    nama: "Company Profile",
+    nama: "Portfolio Website v2.0",
     desk: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis, laborum!",
     tools: ["HTML", "CSS", "Javascript", "AOS", "Swiper", "Lightbox Gallery"],
     dad: "300",

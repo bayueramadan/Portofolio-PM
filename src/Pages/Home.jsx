@@ -1,8 +1,7 @@
 import DataImage, { listProyek } from "../data";
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
-
+import CustomCursor from "../components/CustomCursor";
 import SplitText from "../Animation/Splittext";
-import RippleGrid from "../Animation/RippleGrid";
 
 const handleAnimationComplete = () => {
   console.log("All letters have animated!");
@@ -11,11 +10,13 @@ const handleAnimationComplete = () => {
 function Home({ startAnimation }) {
   return (
     <>
+      {/* Custom Cursor */}
+      <CustomCursor />
       {/* New Hero Section */}
       <section className="hero-section px-5 relative h-screen w-screen flex items-center justify-center overflow-hidden bg-warna-gelap">
         {/* Konten Hero */}
         <div className="relative z-10 text-center flex flex-col items-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-warna-terang pb-4 mt-20">
+          <h1 className="text-4xl md:text-5xl font-bold text-warna-terang pb-4 mt-20 leading-relaxed">
             <SplitText
               text="Hello, I'm Bayu Erfan 👋"
               delay={100}
