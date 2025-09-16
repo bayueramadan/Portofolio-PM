@@ -69,7 +69,7 @@ function Home({ startAnimation }) {
           {listProyek.map((proyek) => (
             <div
               key={proyek.id}
-              className="grid grid-cols-12 gap-6 p-6 rounded-lg items-center bg-warna-putih "
+              className="grid grid-cols-12 gap-6 p-6 rounded-lg items-center bg-warna-putih shadow-lg"
             >
               {/* Gambar */}
               <div className="col-span-12 md:col-span-4">
@@ -119,8 +119,8 @@ function Home({ startAnimation }) {
       </div>
       {/* Tentang Section */}
       <section className="w-full py-10 container mx-auto px-4 mt-20">
-        <div className="container mx-auto px-4 ">
-          <div className="grid grid-cols-1 md:grid-cols-12 ">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-12 shadow-lg">
             {/* Kiri: Teks */}
             <div className="rounded-t-md md:rounded-none md:rounded-l-md md:col-span-7 flex flex-col justify-center bg-warna-gelap text-white p-6  h-auto md:h-[450px]">
               <p className="text-lg leading-relaxed mb-6 break-words text-justify">

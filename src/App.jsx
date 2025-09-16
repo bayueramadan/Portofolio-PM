@@ -17,9 +17,9 @@ function App() {
   const [pageReady, setPageReady] = useState(false);
   const isFirstLoad = useRef(true);
 
-  // minimal 5 detik
+  // minimal 3.2 detik
   useEffect(() => {
-    const timer = setTimeout(() => setTimerDone(true), 3500);
+    const timer = setTimeout(() => setTimerDone(true), 3200);
     return () => clearTimeout(timer);
   }, []);
 

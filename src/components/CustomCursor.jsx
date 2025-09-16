@@ -30,8 +30,8 @@ const CustomCursor = () => {
         y,
         duration: 0.3,
         ease: "power2.out",
-        scale: isHover ? 1.5 : 1,
-        borderColor: isHover ? "#22c55e" : "#000", // hijau pas hover
+        scale: isHover ? 1.8 : 1,
+        borderColor: isHover ? "#FFDE21" : "#000", // hijau pas hover
       });
     };
 
@@ -51,12 +51,12 @@ const CustomCursor = () => {
       {/* Follower */}
       <div
         ref={followerRef}
-        className="pointer-events-none fixed z-[9999] w-12 h-12 rounded-full border-2 border-warna-biru bg-transparent"
+        className="pointer-events-none fixed z-[9999] w-12 h-12 rounded-full border-2 border-warna-terang bg-transparent"
       />
       {/* Cursor kecil */}
       <div
         ref={cursorRef}
-        className="pointer-events-none fixed z-[9999] w-3 h-3 rounded-full bg-warna-biru"
+        className="pointer-events-none fixed z-[9999] w-4 h-4 rounded-full bg-[#FFDE21]"
       />
     </>
   );
