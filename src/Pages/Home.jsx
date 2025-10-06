@@ -1,7 +1,8 @@
-import DataImage, { listProyek } from "../data";
+import { listProyek } from "../data";
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 import CustomCursor from "../components/CustomCursor";
 import SplitText from "../Animation/Splittext";
+import { Link } from "react-router-dom";
 
 const handleAnimationComplete = () => {
   console.log("All letters have animated!");
@@ -37,18 +38,18 @@ function Home({ startAnimation }) {
           </h2>
 
           <div className="gap-5 flex justify-center">
-            <a
-              href="#projects"
+            <Link
+              to="/about"
               className="mt-30 bg-warna-hijau text-warna-putih font-semibold px-5 py-2 rounded-lg transition-all duration-300 ease-in-out hover:bg-warna-biru hover:shadow-md hover:shadow-warna-biru/40 hover:scale-105 active:scale-95"
             >
               Let’s Collaborate <i className="ri-profile-line"></i>
-            </a>
-            <a
-              href="#projects"
+            </Link>
+            <Link
+              to="/project"
               className="items-center mt-30 bg-warna-biru text-warna-putih font-semibold px-5 py-2 rounded-lg shadow-md shadow-warna-biru/30 transition-all duration-300 ease-in-out hover:bg-warna-hijau hover:shadow-lg hover:shadow-warna-hijau/40 hover:scale-105 active:scale-95"
             >
               See My Projects <i className="ri-puzzle-line"></i>
-            </a>
+            </Link>
           </div>
         </div>
       </section>
@@ -73,48 +74,49 @@ function Home({ startAnimation }) {
             >
               {/* Gambar */}
               <div className="col-span-12 md:col-span-4">
-                <a href="#LinkProject">
+                <Link to={`/project/${proyek.slug}`}>
                   <img
                     src={proyek.gambar}
-                    alt="Proyek Image"
+                    alt={proyek.nama}
                     loading="lazy"
                     className="rounded-md w-full h-48 object-cover transform transition duration-300 ease-in-out hover:scale-110"
                   />
-                </a>
+                </Link>
               </div>
 
               {/* Konten */}
               <div className="col-span-12 md:col-span-8">
-                <h1 className="text-2xl font-bold mb-3 text-warna-gelap">
+                <h1 className="text-2xl font-bold mb-1 text-warna-gelap">
                   {proyek.nama}
                 </h1>
+                <p className="text-sm font-medium text-warna-hijau mb-2">
+                  {proyek.kategori}
+                </p>
+                <p className="text-base mb-4 text-gray-400">
+                  {proyek.deskripsi}
+                </p>
 
-                {/* Deskripsi */}
-                <p className="text-base mb-4 text-gray-400">{proyek.desk}</p>
-
-                {/* Tools */}
                 <div className="flex flex-wrap gap-2 mb-3">
                   {proyek.tools.map((tool, index) => (
-                    <a
-                      href="#"
+                    <span
                       key={index}
-                      className="py-1 px-3 bg-warna-gelap text-warna-terang font-semibold rounded-md shadow-md shadow-black/30  transition-all duration-300 ease-in-out hover:bg-warna-terang hover:text-zinc-900 hover:shadow-none  active:scale-95"
+                      className="py-1 px-3 bg-warna-gelap text-warna-terang font-semibold rounded-md shadow-md shadow-black/30 transition-all duration-300 ease-in-out hover:bg-warna-terang hover:text-zinc-900 hover:shadow-none active:scale-95"
                     >
                       {tool}
-                    </a>
+                    </span>
                   ))}
                 </div>
               </div>
             </div>
           ))}
-        </div>
-        <div className="flex items-center justify-center grid-cols-12 pt-8">
-          <a
-            href="#projects"
-            className="items-center bg-warna-biru text-warna-putih font-semibold px-5 py-2 rounded-lg shadow-md shadow-warna-biru/30 transition-all duration-300 ease-in-out hover:bg-warna-hijau hover:shadow-lg hover:shadow-warna-hijau/40 hover:scale-105 active:scale-95"
-          >
-            See All Projects <i className="ri-puzzle-line"></i>
-          </a>
+          <div className="flex items-center justify-center grid-cols-12 pt-8">
+            <Link
+              to="/project"
+              className="items-center bg-warna-biru text-warna-putih font-semibold px-5 py-2 rounded-lg shadow-md shadow-warna-biru/30 transition-all duration-300 ease-in-out hover:bg-warna-hijau hover:shadow-lg hover:shadow-warna-hijau/40 hover:scale-105 active:scale-95"
+            >
+              See All Projects <i className="ri-puzzle-line"></i>
+            </Link>
+          </div>
         </div>
       </div>
       {/* Tentang Section */}
@@ -133,12 +135,12 @@ function Home({ startAnimation }) {
                 solving user problems to create impactful products.
               </p>
               <div className="flex justify-center">
-                <a
+                <Link
                   className="mt-10 bg-warna-gelap  border border-warna-hijau  text-warna-hijau font-semibold  px-5 py-2 rounded-lg  transition-all duration-300 ease-in-out hover:bg-warna-hijau  hover:text-white hover:scale-105 hover:shadow-md hover:shadow-lime-500/40  active:scale-95 hover:border--5"
-                  href="#"
+                  to={"/about"}
                 >
                   Get to Know Me <i className="ri-user-3-line"></i>
-                </a>
+                </Link>
               </div>
             </div>
 
