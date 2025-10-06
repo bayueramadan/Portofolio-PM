@@ -168,6 +168,7 @@ export default function About() {
         </div>
       </section>
 
+      {/* Transferable skill */}
       <section className="relative w-full py-20 bg-warna-abu">
         <div className="max-w-6xl mx-auto px-6 text-center">
           {/* Heading */}

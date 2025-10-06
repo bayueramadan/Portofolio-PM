@@ -7,7 +7,9 @@ import Footer from "./components/Footer";
 import Home from "./Pages/Home";
 import About from "./Pages/About";
 import Project from "./Pages/Project";
+import ProjectDetail from "./Pages/ProjectDetail"; // ✅ tambahin ini
 import Contact from "./Pages/Contact";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   const location = useLocation();
@@ -40,7 +42,7 @@ function App() {
   // dipanggil dari Preloader setelah animasi selesai
   const handlePreloaderExit = () => {
     setLoading(false);
-    isFirstLoad.current = false; // ⬅️ tandai sudah masuk pertama kali
+    isFirstLoad.current = false;
   };
 
   // overlay antar halaman (skip untuk load pertama)
@@ -52,7 +54,6 @@ function App() {
     }
   }, [location.pathname, loading]);
 
-  // render
   return (
     <>
       {loading ? (
@@ -60,6 +61,7 @@ function App() {
       ) : (
         <>
           <Navbar />
+          <ScrollToTop />
           <AnimatePresence mode="wait">
             <Routes key={location.pathname} location={location}>
               <Route
@@ -86,6 +88,15 @@ function App() {
                   </PageWrapper>
                 }
               />
+              {/* ✅ Route baru untuk halaman detail project */}
+              <Route
+                path="/project/:slug"
+                element={
+                  <PageWrapper>
+                    <ProjectDetail />
+                  </PageWrapper>
+                }
+              />
               <Route
                 path="/contact"
                 element={
@@ -105,15 +116,14 @@ function App() {
 }
 
 /* Wrapper halaman */
-
 function PageWrapper({ children }) {
   return (
     <motion.div
-      initial={{ y: 50 }} // masuk dari bawah, tanpa opacity
-      animate={{ y: 0 }} // ke posisi normal, tanpa opacity
-      exit={{ y: -50 }} // keluar ke atas, tanpa opacity
+      initial={{ y: 50 }}
+      animate={{ y: 0 }}
+      exit={{ y: -50 }}
       transition={{ duration: 0.5, ease: "easeInOut" }}
-      style={{ position: "relative", zIndex: 0 }} // pastikan layer konten di belakang overlay
+      style={{ position: "relative", zIndex: 0 }}
     >
       {children}
     </motion.div>
