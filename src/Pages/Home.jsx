@@ -1,4 +1,4 @@
-import { listProyek } from "../data";
+import { highlightProjects } from "../data";
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 import CustomCursor from "../components/CustomCursor";
 import SplitText from "../Animation/Splittext";
@@ -66,57 +66,68 @@ function Home({ startAnimation }) {
           projects. I thrive on understanding users, aligning teams, and
           crafting roadmaps for impactful solutions.{" "}
         </p>
-        <div className="proyek-box mt-14 space-y-8">
-          {listProyek.map((proyek) => (
-            <div
-              key={proyek.id}
-              className="grid grid-cols-12 gap-6 p-6 rounded-lg items-center bg-warna-putih shadow-lg"
-            >
-              {/* Gambar */}
-              <div className="col-span-12 md:col-span-4">
-                <Link to={`/project/${proyek.slug}`}>
-                  <img
-                    src={proyek.gambar}
-                    alt={proyek.nama}
-                    loading="lazy"
-                    className="rounded-md w-full h-48 object-cover transform transition duration-300 ease-in-out hover:scale-110"
-                  />
-                </Link>
-              </div>
-
-              {/* Konten */}
-              <div className="col-span-12 md:col-span-8">
-                <h1 className="text-2xl font-bold mb-1 text-warna-gelap">
-                  {proyek.nama}
-                </h1>
-                <p className="text-sm font-medium text-warna-hijau mb-2">
-                  {proyek.kategori}
-                </p>
-                <p className="text-base mb-4 text-gray-400">
-                  {proyek.deskripsi}
-                </p>
-
-                <div className="flex flex-wrap gap-2 mb-3">
-                  {proyek.tools.map((tool, index) => (
-                    <span
-                      key={index}
-                      className="py-1 px-3 bg-warna-gelap text-warna-terang font-semibold rounded-md shadow-md shadow-black/30 transition-all duration-300 ease-in-out hover:bg-warna-terang hover:text-zinc-900 hover:shadow-none active:scale-95"
-                    >
-                      {tool}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </div>
-          ))}
-          <div className="flex items-center justify-center grid-cols-12 pt-8">
+        {/* Card Highlight Project */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8 mt-14">
+          {highlightProjects.map((p) => (
             <Link
-              to="/project"
-              className="items-center bg-warna-biru text-warna-putih font-semibold px-5 py-2 rounded-lg shadow-md shadow-warna-biru/30 transition-all duration-300 ease-in-out hover:bg-warna-hijau hover:shadow-lg hover:shadow-warna-hijau/40 hover:scale-105 active:scale-95"
+              key={p.slug}
+              to={`/project/${p.slug}`}
+              className={`group block rounded-xl border-2 p-6 bg-warna-putih shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300
+        ${
+          p.category === "Metrics"
+            ? "border-green-500"
+            : p.category === "Product Improvement"
+            ? "border-orange-400"
+            : p.category === "Product Design"
+            ? "border-blue-400"
+            : p.category === "RCA"
+            ? "border-yellow-400"
+            : "border-[var(--color-warna-abu)]/40"
+        }`}
             >
-              See All Projects <i className="ri-puzzle-line"></i>
+              {/* Cover */}
+              <div className="flex items-center justify-center h-40 mb-4">
+                <img
+                  src={p.cover}
+                  alt={p.title}
+                  className="max-h-24 object-contain transition-transform duration-300 group-hover:scale-105"
+                />
+              </div>
+
+              {/* Tags */}
+              <div className="flex gap-2 flex-wrap mb-3">
+                <span className="text-xs px-3 py-1 rounded-full bg-[var(--color-warna-abu)]/20 text-[var(--color-warna-hitam)]">
+                  {p.category}
+                </span>
+                <span className="text-xs px-3 py-1 rounded-full bg-[var(--color-warna-hijau)]/10 text-[var(--color-warna-hijau)]">
+                  {p.company}
+                </span>
+              </div>
+
+              {/* Title */}
+              <h3 className="text-lg font-semibold text-[var(--color-warna-hitam)] mb-2">
+                {p.title}
+              </h3>
+
+              {/* Summary */}
+              <p className="text-sm text-[var(--color-warna-abu)] line-clamp-2 mb-4">
+                {p.summary}
+              </p>
+
+              {/* CTA */}
+              <div className="mt-4 text-[var(--color-warna-biru)] font-medium group-hover:underline">
+                Read Case Study →
+              </div>
             </Link>
-          </div>
+          ))}
+        </div>
+        <div className="flex items-center justify-center grid-cols-12 pt-8">
+          <Link
+            to="/project"
+            className="items-center bg-warna-biru text-warna-putih font-semibold px-5 py-2 rounded-lg shadow-md shadow-warna-biru/30 transition-all duration-300 ease-in-out hover:bg-warna-hijau hover:shadow-lg hover:shadow-warna-hijau/40 hover:scale-105 active:scale-95"
+          >
+            See All Projects <i className="ri-puzzle-line"></i>
+          </Link>
         </div>
       </div>
       {/* Tentang Section */}

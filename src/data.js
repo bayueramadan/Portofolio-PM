@@ -1,47 +1,43 @@
 // src/data.js
-export const listProyek = [
+export const highlightProjects = [
   {
     id: 1,
     slug: "bank-jago",
-    nama: "Bank Jago",
-    kategori: "Product Improvement",
-    gambar: "/img/bankjago.jpg",
-    deskripsi:
-      "Case study on making QRIS payments in Bank Jago faster and safer with biometric authentication.",
-    tools: ["UX Research", "UI Design", "Prototype"],
-    warna: "#00aa13", // sesuai aksen utama
+    title: "Making QRIS Payments in Bank Jago Faster and Safer",
+    company: "Bank Jago",
+    category: "Product Improvement",
+    summary:
+      "Improving QRIS payment speed and security through biometric authentication for smoother user experience.",
+    cover: "/images/projects/bank-jago/bankjago-cover.jpg",
   },
   {
     id: 2,
     slug: "kai-access",
-    nama: "KAI Access",
-    kategori: "Product Design",
-    gambar: "/img/kaiaccess.jpg",
-    deskripsi:
-      "Redesign of KAI Access app to improve ticket booking efficiency and user experience.",
-    tools: ["Design Thinking", "User Flow", "UI Kit"],
-    warna: "#007acc", // warna biru untuk variasi
+    title: "Revamping Ticket Booking Experience for KAI Access",
+    company: "KAI Access",
+    category: "Product Design",
+    summary:
+      "Redesigning the KAI Access app to simplify booking flow and improve accessibility for frequent travelers.",
+    cover: "/images/projects/kai-access/kai-access-cover.jpg",
   },
   {
     id: 3,
-    slug: "spotify-ux",
-    nama: "Spotify UX Optimization",
-    kategori: "Metrics",
-    gambar: "/img/spotify.jpg",
-    deskripsi:
-      "Improving discoverability and engagement through smarter recommendation systems.",
-    tools: ["Data Analysis", "A/B Testing", "Prototyping"],
-    warna: "#00aa13",
+    slug: "fintrack",
+    title: "Visualizing Personal Finance Insights",
+    company: "Fintrack",
+    category: "Metrics",
+    summary:
+      "Developing an interactive dashboard to help users understand spending habits and achieve savings goals.",
+    cover: "/images/projects/fintrack/fintrack-cover.jpg",
   },
   {
     id: 4,
-    slug: "amazon-alexa",
-    nama: "Amazon Alexa Case Study",
-    kategori: "RCA",
-    gambar: "/img/amazon.jpg",
-    deskripsi:
-      "Enhancing Alexa’s voice recognition reliability for regional accents.",
-    tools: ["User Testing", "Speech UX", "Iteration"],
-    warna: "#ff9900",
+    slug: "safetrip",
+    title: "Enhancing Travel Safety for Female Travelers",
+    company: "SafeTrip",
+    category: "RCA",
+    summary:
+      "Creating a real-time alert system and community support feature to make solo travel safer and more connected.",
+    cover: "/images/projects/safetrip/safetrip-cover.jpg",
   },
 ];
