@@ -75,11 +75,11 @@ export default function Project() {
       `}
             >
               {/* Cover / Logo */}
-              <div className="flex items-center justify-center h-32 mb-6">
+              <div className="flex items-center justify-center h-44 mb-1">
                 <img
                   src={p.cover}
                   alt={p.title}
-                  className="max-h-16 object-contain"
+                  className="max-h-fit object-contain rounded-lg"
                 />
               </div>
 

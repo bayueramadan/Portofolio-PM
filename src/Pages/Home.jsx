@@ -90,7 +90,7 @@ function Home({ startAnimation }) {
                 <img
                   src={p.cover}
                   alt={p.title}
-                  className="max-h-24 object-contain transition-transform duration-300 group-hover:scale-105"
+                  className="max-h-fit object-contain rounded-lg transition-transform duration-300 group-hover:scale-105"
                 />
               </div>
 

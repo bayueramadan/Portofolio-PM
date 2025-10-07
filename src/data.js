@@ -8,7 +8,7 @@ export const highlightProjects = [
     category: "Product Improvement",
     summary:
       "Improving QRIS payment speed and security through biometric authentication for smoother user experience.",
-    cover: "/images/projects/bank-jago/bankjago-cover.jpg",
+    cover: "/assets/img/BankJago/Co-BankJago.svg",
   },
   {
     id: 2,

@@ -5,7 +5,7 @@ export const projects = [
     title: "Making QRIS Payments Faster & Safer with Biometric Authentication",
     company: "Bank Jago",
     category: "Product Improvement",
-    cover: "/images/bankjago-cover.jpg",
+    cover: "/assets/img/BankJago/Co-BankJago.svg",
     summary:
       "Case study on improving QRIS payment speed & security in Bank Jago by integrating biometric verification.",
   },
