@@ -20,7 +20,7 @@ export default function ProjectDetail() {
       <div className="min-h-screen flex flex-col justify-center items-center bg-[var(--color-warna-terang)] text-center">
         <p className="text-warna-abu mb-4">Project not found</p>
         <Link
-          to="/projects"
+          to="/project"
           className="text-[var(--color-warna-biru)] hover:text-[var(--color-warna-hijau)] transition-colors"
         >
           ← Back to Projects
@@ -68,7 +68,7 @@ export default function ProjectDetail() {
       {/* ===== FOOTER / NAVIGASI KEMBALI ===== */}
       <footer className="py-16 text-center border-t border-[var(--color-warna-abu)]/20">
         <Link
-          to="/projects"
+          to="/project"
           className="text-[var(--color-warna-biru)] font-medium hover:text-[var(--color-warna-hijau)] transition-colors"
         >
           ← Back to All Projects

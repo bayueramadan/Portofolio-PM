@@ -4,11 +4,12 @@ import { projects } from "../Data/DataProject";
 
 export default function Project() {
   const categories = [
-    { title: "Web Apps", color: "bg-yellow-100", icon: "💻" },
-    { title: "UI/UX Case Study", color: "bg-green-100", icon: "🎨" },
-    { title: "Product Design", color: "bg-blue-100", icon: "🛠️" },
-    { title: "Animation & Interaction", color: "bg-pink-100", icon: "✨" },
-    { title: "Open Source", color: "bg-purple-100", icon: "🌍" },
+    { title: "RCA (Root Cause Analysis)", icon: "🔍", color: "bg-yellow-100" },
+    { title: "Metrics & Impact", icon: "📊", color: "bg-green-100" },
+    { title: "Guestimates / Strategy", icon: "🧠", color: "bg-purple-100" },
+    { title: "Product Improvement", icon: "⚙️", color: "bg-pink-100" },
+    { title: "Product Design", icon: "🎨", color: "bg-blue-100" },
+    { title: "PM Toolkit (Resources)", icon: "🧰", color: "bg-orange-100" },
   ];
 
   return (
@@ -62,16 +63,21 @@ export default function Project() {
               to={`/project/${p.slug}`}
               className={`block rounded-xl border-2 p-6 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-200
         ${
-          p.category === "Metrics"
+          p.category === "Metrics & Impact"
             ? "border-green-500"
             : p.category === "Product Improvement"
-            ? "border-orange-400"
+            ? "border-pink-500"
             : p.category === "Product Design"
-            ? "border-blue-400"
-            : p.category === "RCA"
-            ? "border-yellow-400"
+            ? "border-blue-500"
+            : p.category === "RCA (Root Cause Analysis)"
+            ? "border-yellow-500"
+            : p.category === "Guestimates / Strategy"
+            ? "border-purple-500"
+            : p.category === "PM Toolkit (Resources)"
+            ? "border-orange-500"
             : "border-[var(--color-warna-abu)]/40"
         }
+
       `}
             >
               {/* Cover / Logo */}
