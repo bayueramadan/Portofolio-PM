@@ -1,0 +1,231 @@
+import { highlightProjects } from "../data";
+import { DotLottieReact } from "@lottiefiles/dotlottie-react";
+import CustomCursor from "../components/CustomCursor";
+import SplitText from "../Animation/Splittext";
+import { Link } from "react-router-dom";
+
+const handleAnimationComplete = () => {
+  console.log("All letters have animated!");
+};
+
+function Home({ startAnimation }) {
+  return (
+    <>
+      {/* Custom Cursor */}
+      <CustomCursor />
+      {/* New Hero Section */}
+      <section className="hero-section px-5 relative h-screen w-screen flex items-center justify-center overflow-hidden bg-warna-gelap">
+        {/* Konten Hero */}
+        <div className="relative z-10 text-center flex flex-col items-center">
+          <h1 className="text-4xl md:text-5xl font-bold text-warna-terang pb-4 mt-20 leading-relaxed">
+            <SplitText
+              text="Hello, I'm Bayu Erfan 👋"
+              delay={100}
+              duration={0.6}
+              ease="power3.out"
+              splitType="chars"
+              from={{ opacity: 0, y: 40 }}
+              to={{ opacity: 1, y: 0 }}
+              threshold={0}
+              rootMargin="0px"
+              textAlign="center"
+              onLetterAnimationComplete={handleAnimationComplete}
+            />
+          </h1>
+          <h2 className="text-base md:text-3xl font-semibold text-warna-terang/80 mb-6">
+            Focused on learning and applying Product Management in real
+            projects.
+          </h2>
+
+          <div className="gap-5 flex justify-center">
+            <Link
+              to="/about"
+              className="mt-30 bg-warna-hijau text-warna-putih font-semibold px-5 py-2 rounded-lg transition-all duration-300 ease-in-out hover:bg-warna-biru hover:shadow-md hover:shadow-warna-biru/40 hover:scale-105 active:scale-95"
+            >
+              Let’s Collaborate <i className="ri-profile-line"></i>
+            </Link>
+            <Link
+              to="/project"
+              className="items-center mt-30 bg-warna-biru text-warna-putih font-semibold px-5 py-2 rounded-lg shadow-md shadow-warna-biru/30 transition-all duration-300 ease-in-out hover:bg-warna-hijau hover:shadow-lg hover:shadow-warna-hijau/40 hover:scale-105 active:scale-95"
+            >
+              See My Projects <i className="ri-puzzle-line"></i>
+            </Link>
+          </div>
+        </div>
+      </section>
+      {/* Proyek Section */}{" "}
+      <div className="proyek py-10 container mx-auto px-4">
+        {" "}
+        <h1 className="text-center text-4xl font-bold mb-2 text-warna-gelap">
+          {" "}
+          Highlight Project and Case Study{" "}
+        </h1>{" "}
+        <p className="max-w-2xl mx-auto text-base text-shadow-warna-gelap mb-8 text-center">
+          {" "}
+          Learning the ropes of Product Management through mobile and web
+          projects. I thrive on understanding users, aligning teams, and
+          crafting roadmaps for impactful solutions.{" "}
+        </p>
+        {/* Card Highlight Project */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8 mt-14">
+          {highlightProjects.map((p) => (
+            <Link
+              key={p.slug}
+              to={`/project/${p.slug}`}
+              className={`group block rounded-xl border-2 p-6 bg-warna-putih shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300
+        ${
+          p.category === "Metrics & Impact"
+            ? "border-green-500"
+            : p.category === "Product Improvement"
+            ? "border-pink-500"
+            : p.category === "Product Design"
+            ? "border-blue-500"
+            : p.category === "RCA (Root Cause Analysis)"
+            ? "border-yellow-500"
+            : p.category === "Guestimates / Strategy"
+            ? "border-purple-500"
+            : p.category === "PM Toolkit (Resources)"
+            ? "border-orange-500"
+            : "border-[var(--color-warna-abu)]/40"
+        }`}
+            >
+              {/* Cover */}
+              <div className="flex items-center justify-center h-40 mb-4">
+                <img
+                  src={p.cover}
+                  alt={p.title}
+                  className="max-h-fit object-contain rounded-lg transition-transform duration-300 group-hover:scale-105"
+                />
+              </div>
+
+              {/* Tags */}
+              <div className="flex gap-2 flex-wrap mb-3">
+                <span className="text-xs px-3 py-1 rounded-full bg-[var(--color-warna-abu)]/20 text-[var(--color-warna-hitam)]">
+                  {p.category}
+                </span>
+                <span className="text-xs px-3 py-1 rounded-full bg-[var(--color-warna-hijau)]/10 text-[var(--color-warna-hijau)]">
+                  {p.company}
+                </span>
+              </div>
+
+              {/* Title */}
+              <h3 className="text-lg font-semibold text-[var(--color-warna-hitam)] mb-2">
+                {p.title}
+              </h3>
+
+              {/* Summary */}
+              <p className="text-sm text-[var(--color-warna-abu)] line-clamp-2 mb-4">
+                {p.summary}
+              </p>
+
+              {/* CTA */}
+              <div className="mt-4 text-[var(--color-warna-biru)] font-medium group-hover:underline">
+                Read Case Study →
+              </div>
+            </Link>
+          ))}
+        </div>
+        <div className="flex items-center justify-center grid-cols-12 pt-8">
+          <Link
+            to="/project"
+            className="items-center bg-warna-biru text-warna-putih font-semibold px-5 py-2 rounded-lg shadow-md shadow-warna-biru/30 transition-all duration-300 ease-in-out hover:bg-warna-hijau hover:shadow-lg hover:shadow-warna-hijau/40 hover:scale-105 active:scale-95"
+          >
+            See All Projects <i className="ri-puzzle-line"></i>
+          </Link>
+        </div>
+      </div>
+      {/* Tentang Section */}
+      <section className="w-full py-10 container mx-auto px-4 mt-20">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-12 shadow-lg">
+            {/* Kiri: Teks */}
+            <div className="rounded-t-md md:rounded-none md:rounded-l-md md:col-span-7 flex flex-col justify-center bg-warna-gelap text-white p-6  h-auto md:h-[450px]">
+              <p className="text-lg leading-relaxed mb-6 break-words text-justify">
+                Detail-oriented professional with 2 years of experience in
+                manufacturing operations at PT Denso Indonesia, where I focused
+                on process efficiency and team coordination. Now transitioning
+                into Product Management, I bring strong analytical thinking,
+                collaboration skills, and a continuous improvement mindset.
+                Skilled in tools like Figma and Notion, and passionate about
+                solving user problems to create impactful products.
+              </p>
+              <div className="flex justify-center">
+                <Link
+                  className="mt-10 bg-warna-gelap  border border-warna-hijau  text-warna-hijau font-semibold  px-5 py-2 rounded-lg  transition-all duration-300 ease-in-out hover:bg-warna-hijau  hover:text-white hover:scale-105 hover:shadow-md hover:shadow-lime-500/40  active:scale-95 hover:border--5"
+                  to={"/about"}
+                >
+                  Get to Know Me <i className="ri-user-3-line"></i>
+                </Link>
+              </div>
+            </div>
+
+            {/* Kanan: Gambar */}
+            <div className="rounded-b-md md:rounded-none md:rounded-r-md md:col-span-5 flex items-center justify-center  bg-warna-gelap  h-auto md:h-[450px]">
+              <DotLottieReact
+                src="https://lottie.host/198fa489-43ad-400e-b272-5668e10e1659/cfxs4z6ing.lottie"
+                loop
+                autoplay
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+      {/* Kontak Section */}
+      <div className=" py-16 px-8 container mx-auto">
+        <div className=" mx-auto grid grid-cols-1 md:grid-cols-12 gap-12 bg-warna-putih rounded-md shadow-xl/20 p-10 shadow-warna-hijau">
+          {/* Form Section */}
+          <div className="md:col-span-7">
+            <h2 className="text-3xl font-bold text-black mb-6">Contact Me</h2>
+            <form className="space-y-5">
+              <input
+                type="text"
+                placeholder="Type Your Name.."
+                className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none text-warna-gelap"
+              />
+              <input
+                type="email"
+                placeholder="Type Your Email.."
+                className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none text-warna-gelap"
+              />
+              <textarea
+                placeholder="Type Your Message"
+                rows="6"
+                className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none text-warna-gelap"
+              ></textarea>
+              <button
+                type="submit"
+                cursor="pointer"
+                className="w-full cursor-pointer md:w-auto mt-10 bg-warna-hijau text-warna-putih font-semibold px-5 py-2 rounded-lg transition-all duration-300 ease-in-out hover:bg-warna-biru hover:shadow-md hover:shadow-warna-biru/40 hover:scale-105 active:scale-95"
+              >
+                Send Message <i className="ri-mail-send-line"></i>
+              </button>
+            </form>
+          </div>
+
+          {/* Contact Alternatives */}
+          <div className="md:col-span-5 flex flex-col justify-center space-y-5 text-warna-gelap">
+            <p className="text-lg">
+              Interested in working together? Let’s connect. You can fill out
+              the form or reach me directly via LinkedIn or email.
+            </p>
+            <div className="space-y-3">
+              <p>
+                <span className="font-semibold">Email:</span>{" "}
+                hello@bayuerfan.com
+              </p>
+              <p>
+                <span className="font-semibold">LinkedIn:</span> Bayu Erfan
+              </p>
+              <p>
+                <span className="font-semibold">Location:</span> Malang,
+                Indonesia
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+}
+
+export default Home;

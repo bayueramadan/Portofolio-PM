@@ -7,9 +7,17 @@
 }
 
 @theme {
-  --color-primary: #1e2027;
-  --color-secondary: #f2a311;
-  --color-tertiary: #ffffff;
-  --color-aksen1: #7c68f4;
-  --color-aksen2: #494b4b;
+  /* ================================
+     🎨 Warna Utama Portfolio Bayu
+     ================================ */
+
+  --color-warna-terang: #dde1e5; /* 🌤️ Background utama (homepage, section clean) */
+  --color-warna-gelap: #171514; /* 🌑 Background about me, footer, kontras elegan */
+
+  --color-warna-hijau: #00aa13; /* 🟢 Aksen utama (CTA, judul penting, node timeline) */
+  --color-warna-biru: #007acc; /* 🔵 Aksen sekunder (link, hover, tombol alternatif) */
+
+  --color-warna-putih: #fffef8; /* ⚪ Text di background gelap */
+  --color-warna-hitam: #000000; /* ⚫ Text di background terang */
+  --color-warna-abu: #b0b0b0; /* 🌫️ Text sekunder, border halus */
 }

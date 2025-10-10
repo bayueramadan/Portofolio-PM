@@ -1,27 +1,62 @@
+import { Link } from "react-router-dom";
+
 const Footer = () => {
   return (
-    <div className="mt-32 py-4 flex md:flex-row flex-col gap-6 md:gap-0 justify-between items-center">
-      <h1 className="text-2xl font-bold">Portofolio</h1>
-      <div className="flex gap-7">
-        <a href="#">Beranda</a>
-        <a href="#">Tentang</a>
-        <a href="#">Proyek</a>
+    <footer className="bg-warna-gelap border-t border-zinc-700 mt-32 rounded-t-3xl">
+      <div className="max-w-6xl mx-auto px-6 py-12 flex flex-col items-center gap-8">
+        {/* Social Icons */}
+        <div className="flex gap-6">
+          <a
+            href="#"
+            aria-label="GitHub"
+            className="text-zinc-400 hover:text-amber-400 transition"
+          >
+            <i className="ri-github-fill ri-2x"></i>
+          </a>
+          <a
+            href="#"
+            aria-label="Instagram"
+            className="text-zinc-400 hover:text-amber-400 transition"
+          >
+            <i className="ri-instagram-fill ri-2x"></i>
+          </a>
+          <a
+            href="#"
+            aria-label="Reddit"
+            className="text-zinc-400 hover:text-amber-400 transition"
+          >
+            <i className="ri-reddit-fill ri-2x"></i>
+          </a>
+          <a
+            href="#"
+            aria-label="YouTube"
+            className="text-zinc-400 hover:text-amber-400 transition"
+          >
+            <i className="ri-youtube-fill ri-2x"></i>
+          </a>
+        </div>
+
+        {/* Optional Extra Info */}
+        <div className="text-sm text-zinc-400 text-center">
+          <p>Built with React & Tailwind · Version 3</p>
+          <p>
+            <a
+              href="https://bayueramadan.github.io/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-amber-400 transition"
+            >
+              Lihat Portofolio Versi 2
+            </a>
+          </p>
+        </div>
+
+        {/* Copyright */}
+        <p className="text-xs text-zinc-500 font-medium text-center">
+          © 2025 Bayu Erfan Ramadani. All rights reserved.
+        </p>
       </div>
-      <div className="flex items-center gap-3">
-        <a href="#">
-          <i className="ri-github-fill ri-2x"></i>
-        </a>
-        <a href="#">
-          <i className="ri-instagram-fill ri-2x"></i>
-        </a>
-        <a href="#">
-          <i className="ri-reddit-fill ri-2x"></i>
-        </a>
-        <a href="#">
-          <i className="ri-youtube-fill ri-2x"></i>
-        </a>
-      </div>
-    </div>
+    </footer>
   );
 };
 
