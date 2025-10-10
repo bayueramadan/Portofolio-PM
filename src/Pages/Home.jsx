@@ -1,8 +1,8 @@
-import DataImage, { listProyek } from "../data";
+import { highlightProjects } from "../data";
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
-import AuroraBackground from "../components/Aurora/Aurora";
+import CustomCursor from "../components/CustomCursor";
 import SplitText from "../Animation/Splittext";
-import AnimatedList from "../Animation/AnimatedList";
+import { Link } from "react-router-dom";
 
 const handleAnimationComplete = () => {
   console.log("All letters have animated!");
@@ -11,14 +11,13 @@ const handleAnimationComplete = () => {
 function Home({ startAnimation }) {
   return (
     <>
-      {/* New Hero Section  */}
-      <section className="hero relative flex flex-col items-center justify-center min-h-screen w-full overflow-hidden pt-[72px]">
-        <div className="absolute top-0 left-0 w-full h-full -z-10">
-          <AuroraBackground />
-        </div>
-
-        <div className="max-w-4xl w-full mx-auto text-center px-6 relative z-10">
-          <h1 className="text-3xl md:text-5xl font-bold text-gray-100 mb-4">
+      {/* Custom Cursor */}
+      <CustomCursor />
+      {/* New Hero Section */}
+      <section className="hero-section px-5 relative h-screen w-screen flex items-center justify-center overflow-hidden bg-warna-gelap">
+        {/* Konten Hero */}
+        <div className="relative z-10 text-center flex flex-col items-center">
+          <h1 className="text-4xl md:text-5xl font-bold text-warna-terang pb-4 mt-20 leading-relaxed">
             <SplitText
               text="Hello, I'm Bayu Erfan 👋"
               delay={100}
@@ -33,97 +32,114 @@ function Home({ startAnimation }) {
               onLetterAnimationComplete={handleAnimationComplete}
             />
           </h1>
-          <h2 className="text-base md:text-3xl font-semibold text-gray-400 mb-6">
+          <h2 className="text-base md:text-3xl font-semibold text-warna-terang/80 mb-6">
             Focused on learning and applying Product Management in real
             projects.
           </h2>
+
           <div className="gap-5 flex justify-center">
-            <a
-              href="#projects"
-              className="mt-30 bg-zinc-900  border border-amber-500  text-amber-500 font-semibold  px-5 py-2 rounded-lg  transition-all duration-300 ease-in-out hover:bg-gradient-to-r hover:from-yellow-400 hover:via-amber-500 hover:to-lime-500  hover:text-white hover:scale-105 hover:shadow-md hover:shadow-lime-500/40  active:scale-95"
+            <Link
+              to="/about"
+              className="mt-30 bg-warna-hijau text-warna-putih font-semibold px-5 py-2 rounded-lg transition-all duration-300 ease-in-out hover:bg-warna-biru hover:shadow-md hover:shadow-warna-biru/40 hover:scale-105 active:scale-95"
             >
               Let’s Collaborate <i className="ri-profile-line"></i>
-            </a>
-            <a
-              href="#projects"
-              className="items-center mt-30 bg-gradient-to-r from-amber-400 via-orange-500 to-rose-500 text-white font-semibold px-5 py-2 rounded-lg shadow-md shadow-orange-500/30 transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-lg hover:shadow-orange-500/50  active:scale-95"
+            </Link>
+            <Link
+              to="/project"
+              className="items-center mt-30 bg-warna-biru text-warna-putih font-semibold px-5 py-2 rounded-lg shadow-md shadow-warna-biru/30 transition-all duration-300 ease-in-out hover:bg-warna-hijau hover:shadow-lg hover:shadow-warna-hijau/40 hover:scale-105 active:scale-95"
             >
               See My Projects <i className="ri-puzzle-line"></i>
-            </a>
+            </Link>
           </div>
         </div>
       </section>
       {/* Proyek Section */}{" "}
       <div className="proyek py-10 container mx-auto px-4">
         {" "}
-        <h1 className="text-center text-4xl font-bold mb-2 text-gray-100">
+        <h1 className="text-center text-4xl font-bold mb-2 text-warna-gelap">
           {" "}
           Highlight Project and Case Study{" "}
         </h1>{" "}
-        <p className="max-w-2xl mx-auto text-base text-gray-400 mb-8 text-center">
+        <p className="max-w-2xl mx-auto text-base text-shadow-warna-gelap mb-8 text-center">
           {" "}
           Learning the ropes of Product Management through mobile and web
           projects. I thrive on understanding users, aligning teams, and
           crafting roadmaps for impactful solutions.{" "}
         </p>
-        <div className="proyek-box mt-14 space-y-8">
-          {listProyek.map((proyek) => (
-            <div
-              key={proyek.id}
-              className="grid grid-cols-12 gap-6 p-6 rounded-lg items-center bg-zinc-800 border border-zinc-700"
+        {/* Card Highlight Project */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8 mt-14">
+          {highlightProjects.map((p) => (
+            <Link
+              key={p.slug}
+              to={`/project/${p.slug}`}
+              className={`group block rounded-xl border-2 p-6 bg-warna-putih shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300
+        ${
+          p.category === "Metrics & Impact"
+            ? "border-green-500"
+            : p.category === "Product Improvement"
+            ? "border-pink-500"
+            : p.category === "Product Design"
+            ? "border-blue-500"
+            : p.category === "RCA (Root Cause Analysis)"
+            ? "border-yellow-500"
+            : p.category === "Guestimates / Strategy"
+            ? "border-purple-500"
+            : p.category === "PM Toolkit (Resources)"
+            ? "border-orange-500"
+            : "border-[var(--color-warna-abu)]/40"
+        }`}
             >
-              {/* Gambar */}
-              <div className="col-span-12 md:col-span-4">
-                <a href="#LinkProject">
-                  <img
-                    src={proyek.gambar}
-                    alt="Proyek Image"
-                    loading="lazy"
-                    className="rounded-md w-full h-48 object-cover transform transition duration-300 ease-in-out hover:scale-110"
-                  />
-                </a>
+              {/* Cover */}
+              <div className="flex items-center justify-center h-40 mb-4">
+                <img
+                  src={p.cover}
+                  alt={p.title}
+                  className="max-h-fit object-contain rounded-lg transition-transform duration-300 group-hover:scale-105"
+                />
               </div>
 
-              {/* Konten */}
-              <div className="col-span-12 md:col-span-8">
-                <h1 className="text-2xl font-bold mb-3 text-gray-100">
-                  {proyek.nama}
-                </h1>
-
-                {/* Tools */}
-                <div className="flex flex-wrap gap-2 mb-3">
-                  {proyek.tools.map((tool, index) => (
-                    <a
-                      href="#"
-                      key={index}
-                      className="py-1 px-3 border bg-zinc-700 text-gray-300 hover:bg-amber-500 hover:text-zinc-900 rounded-md font-semibold"
-                    >
-                      {tool}
-                    </a>
-                  ))}
-                </div>
-
-                {/* Deskripsi */}
-                <p className="text-base mb-4 text-gray-400">{proyek.desk}</p>
+              {/* Tags */}
+              <div className="flex gap-2 flex-wrap mb-3">
+                <span className="text-xs px-3 py-1 rounded-full bg-[var(--color-warna-abu)]/20 text-[var(--color-warna-hitam)]">
+                  {p.category}
+                </span>
+                <span className="text-xs px-3 py-1 rounded-full bg-[var(--color-warna-hijau)]/10 text-[var(--color-warna-hijau)]">
+                  {p.company}
+                </span>
               </div>
-            </div>
+
+              {/* Title */}
+              <h3 className="text-lg font-semibold text-[var(--color-warna-hitam)] mb-2">
+                {p.title}
+              </h3>
+
+              {/* Summary */}
+              <p className="text-sm text-[var(--color-warna-abu)] line-clamp-2 mb-4">
+                {p.summary}
+              </p>
+
+              {/* CTA */}
+              <div className="mt-4 text-[var(--color-warna-biru)] font-medium group-hover:underline">
+                Read Case Study →
+              </div>
+            </Link>
           ))}
         </div>
         <div className="flex items-center justify-center grid-cols-12 pt-8">
-          <a
-            href="#projects"
-            className="items-center mt-10 bg-gradient-to-r from-amber-400 via-orange-500 to-rose-500 text-white font-semibold px-5 py-2 rounded-lg shadow-md shadow-orange-500/30 transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-lg hover:shadow-orange-500/50  active:scale-95"
+          <Link
+            to="/project"
+            className="items-center bg-warna-biru text-warna-putih font-semibold px-5 py-2 rounded-lg shadow-md shadow-warna-biru/30 transition-all duration-300 ease-in-out hover:bg-warna-hijau hover:shadow-lg hover:shadow-warna-hijau/40 hover:scale-105 active:scale-95"
           >
             See All Projects <i className="ri-puzzle-line"></i>
-          </a>
+          </Link>
         </div>
       </div>
       {/* Tentang Section */}
       <section className="w-full py-10 container mx-auto px-4 mt-20">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-12">
+          <div className="grid grid-cols-1 md:grid-cols-12 shadow-lg">
             {/* Kiri: Teks */}
-            <div className="md:col-span-7 flex flex-col justify-center bg-amber-400 text-black p-6 rounded-l-lg h-auto md:h-[450px]">
+            <div className="rounded-t-md md:rounded-none md:rounded-l-md md:col-span-7 flex flex-col justify-center bg-warna-gelap text-white p-6  h-auto md:h-[450px]">
               <p className="text-lg leading-relaxed mb-6 break-words text-justify">
                 Detail-oriented professional with 2 years of experience in
                 manufacturing operations at PT Denso Indonesia, where I focused
@@ -134,17 +150,17 @@ function Home({ startAnimation }) {
                 solving user problems to create impactful products.
               </p>
               <div className="flex justify-center">
-                <a
-                  className="mt-10 bg-zinc-900  border border-amber-500  text-amber-500 font-semibold  px-5 py-2 rounded-lg  transition-all duration-300 ease-in-out hover:bg-gradient-to-r hover:from-yellow-400 hover:via-amber-500 hover:to-lime-500  hover:text-white hover:scale-105 hover:shadow-md hover:shadow-lime-500/40  active:scale-95 hover:border--5"
-                  href="#"
+                <Link
+                  className="mt-10 bg-warna-gelap  border border-warna-hijau  text-warna-hijau font-semibold  px-5 py-2 rounded-lg  transition-all duration-300 ease-in-out hover:bg-warna-hijau  hover:text-white hover:scale-105 hover:shadow-md hover:shadow-lime-500/40  active:scale-95 hover:border--5"
+                  to={"/about"}
                 >
                   Get to Know Me <i className="ri-user-3-line"></i>
-                </a>
+                </Link>
               </div>
             </div>
 
             {/* Kanan: Gambar */}
-            <div className="md:col-span-5 flex items-center justify-center text-black bg-amber-400 rounded-r-lg h-auto md:h-[450px]">
+            <div className="rounded-b-md md:rounded-none md:rounded-r-md md:col-span-5 flex items-center justify-center  bg-warna-gelap  h-auto md:h-[450px]">
               <DotLottieReact
                 src="https://lottie.host/198fa489-43ad-400e-b272-5668e10e1659/cfxs4z6ing.lottie"
                 loop
@@ -155,31 +171,31 @@ function Home({ startAnimation }) {
         </div>
       </section>
       {/* Kontak Section */}
-      <div className=" py-16 px-6 container mx-auto">
-        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-12 bg-zinc-800 rounded-2xl shadow-xl/20 p-10 shadow-amber-400">
+      <div className=" py-16 px-8 container mx-auto">
+        <div className=" mx-auto grid grid-cols-1 md:grid-cols-12 gap-12 bg-warna-putih rounded-md shadow-xl/20 p-10 shadow-warna-hijau">
           {/* Form Section */}
           <div className="md:col-span-7">
-            <h2 className="text-3xl font-bold text-white mb-6">Contact Me</h2>
+            <h2 className="text-3xl font-bold text-black mb-6">Contact Me</h2>
             <form className="space-y-5">
               <input
                 type="text"
                 placeholder="Type Your Name.."
-                className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none"
+                className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none text-warna-gelap"
               />
               <input
                 type="email"
                 placeholder="Type Your Email.."
-                className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none"
+                className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none text-warna-gelap"
               />
               <textarea
                 placeholder="Type Your Message"
                 rows="6"
-                className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none"
+                className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none text-warna-gelap"
               ></textarea>
               <button
                 type="submit"
                 cursor="pointer"
-                className="w-full cursor-pointer md:w-auto mt-10 bg-gradient-to-r from-amber-400 via-orange-500 to-rose-500 text-white font-semibold px-5 py-2 rounded-lg shadow-md shadow-orange-500/30 transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-lg hover:shadow-orange-500/50  active:scale-95"
+                className="w-full cursor-pointer md:w-auto mt-10 bg-warna-hijau text-warna-putih font-semibold px-5 py-2 rounded-lg transition-all duration-300 ease-in-out hover:bg-warna-biru hover:shadow-md hover:shadow-warna-biru/40 hover:scale-105 active:scale-95"
               >
                 Send Message <i className="ri-mail-send-line"></i>
               </button>
@@ -187,7 +203,7 @@ function Home({ startAnimation }) {
           </div>
 
           {/* Contact Alternatives */}
-          <div className="md:col-span-5 flex flex-col justify-center space-y-5 text-white">
+          <div className="md:col-span-5 flex flex-col justify-center space-y-5 text-warna-gelap">
             <p className="text-lg">
               Interested in working together? Let’s connect. You can fill out
               the form or reach me directly via LinkedIn or email.

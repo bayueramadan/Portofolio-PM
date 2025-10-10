@@ -10,13 +10,12 @@ const Preloader = ({ readyToExit, onExit }) => {
       onAnimationComplete={() => {
         if (readyToExit) onExit();
       }}
-      className={`fixed inset-0 z-[9999] bg-amber-400 flex items-center justify-center ${
+      className={`fixed inset-0 z-[9999] bg-warna-abu flex items-center justify-center ${
         readyToExit ? "rounded-b-[3rem]" : ""
       }`}
     >
       <DotLottieReact
-        src="https://lottie.host/2abdb104-2f1d-4745-825c-17f0591077e9/EJcgY33d0p.lottie"
-        loop
+        src="https://lottie.host/3136f74a-a2c7-4b44-8f7e-a4847b29375f/Bq4dutVWrd.lottie"
         autoplay
         style={{ width: "350px", height: "350px" }}
       />
