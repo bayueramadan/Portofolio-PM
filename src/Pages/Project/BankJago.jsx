@@ -1,4 +1,5 @@
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
+import { Link } from "react-router-dom";
 
 export default function BankJago() {
   return (
@@ -222,7 +223,7 @@ export default function BankJago() {
             Restate the Problem Briefly
           </h3>
 
-          <div className="space-y-4 text-[var(--color-warna-gelap)]">
+          <div className="space-y-4 text-[var(--color-warna-gelap)] text-base md:text-lg leading-relaxed">
             <p>
               When paying with QRIS in Bank Jago, users must enter a PIN before
               completing the transaction. This process feels slow and stressful,
@@ -274,7 +275,7 @@ export default function BankJago() {
             Proposed Solution
           </h3>
 
-          <div className="space-y-4 text-[var(--color-warna-gelap)]">
+          <div className="space-y-4 text-[var(--color-warna-gelap)] text-base md:text-lg leading-relaxed">
             <p>
               Introduce fingerprint authentication for QRIS payments under a set
               limit (e.g., Rp1,000,000).
@@ -292,6 +293,177 @@ export default function BankJago() {
           </div>
         </div>
       </section>
+
+      {/* 🟪 SECTION: USER JOURNEY MAP (After) */}
+      <section className="bg-[var(--color-warna-terang)] px-6 md:px-20 py-10 md:py-16 flex flex-col items-center text-center">
+        {/* Judul */}
+        <h2 className="text-3xl md:text-4xl font-extrabold text-[#ff0044] mb-4">
+          User Journey Map (After)
+        </h2>
+
+        {/* Wrapper scrollable */}
+        <div className="w-full overflow-x-auto md:overflow-visible">
+          <div className="min-w-[600px] md:min-w-0 flex justify-center">
+            <img
+              src="/assets/img/BankJago/UJ2-BankJago.png"
+              alt="User Journey Map - Before Implementation"
+              className="h-[400px] md:h-auto w-auto rounded-lg shadow-md"
+              loading="lazy"
+            />
+          </div>
+        </div>
+
+        {/* Petunjuk scroll (muncul hanya di mobile) */}
+        <p className="text-sm text-gray-500 mt-4 md:hidden italic">
+          👉 Geser ke kanan untuk melihat detail lainnya
+        </p>
+      </section>
+
+      {/* 🧩 SECTION: RESULT / EXPECTED IMPACT */}
+      <section className="bg-[var(--color-warna-terang)] text-[var(--color-warna-gelap)] px-6 md:px-20 py-10 md:py-16 flex flex-col md:flex-row items-center justify-between gap-10 md:gap-20">
+        {/* Kiri: Konten Teks */}
+        <div className="flex-1">
+          <h2 className="text-red-500 font-bold text-sm tracking-widest uppercase mb-4">
+            Result
+          </h2>
+
+          <h3 className="text-3xl md:text-4xl font-extrabold text-[#ff0044] mb-6">
+            Expected Impact
+          </h3>
+
+          <ul className="space-y-4 text-base md:text-lg leading-relaxed text-[var(--color-warna-gelap)]">
+            <li>
+              • Reduce average payment time from <b>11s → 7s</b>
+            </li>
+            <li>
+              • Improve perceived convenience score <b>(+25%)</b>
+            </li>
+            <li>
+              • Maintain <b>100% security</b> for high-value transactions
+            </li>
+          </ul>
+        </div>
+
+        {/* Kanan: Ilustrasi (Placeholder) */}
+        <div className="flex-1 flex justify-center items-center">
+          <div className="w-[260px] h-[260px] md:w-[320px] md:h-[320px] rounded-lg flex items-center justify-center text-gray-400 italic text-sm">
+            <DotLottieReact
+              src="https://lottie.host/b3715dca-7f8e-45f3-a0c7-c1647059f40d/DiXfQD3A84.lottie"
+              loop
+              autoplay
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* 🧩 SECTION: RESULT — ACHIEVEMENTS */}
+      <section className="bg-[var(--color-warna-terang)] text-[var(--color-warna-gelap)] px-6 md:px-20 py-10 md:py-16 flex flex-col md:flex-row items-center justify-between gap-10 md:gap-20">
+        {/* Kiri: Teks (2/3 Lebar) */}
+        <div className="flex-[2]">
+          <h2 className="text-red-500 font-bold text-sm tracking-widest uppercase mb-4">
+            Result
+          </h2>
+
+          <h3 className="text-3xl md:text-4xl font-extrabold text-[#ff0044] mb-6">
+            Achievements
+          </h3>
+
+          <ul className="space-y-6 text-base md:text-lg leading-relaxed text-[var(--color-warna-gelap)]">
+            <li>
+              💡 By creating this case study, I learned how simplifying the
+              payment verification flow can make users feel calmer and more
+              confident during transactions.
+            </li>
+            <li>
+              🔒 I discovered that using fingerprint verification helps users
+              reduce stress and hesitation when they are in a queue and need to
+              complete payments quickly.
+            </li>
+            <li>
+              ⏱️ Through the User Journey Map, I was able to understand what
+              triggers user frustration and how faster verification can enhance
+              both speed and privacy.
+            </li>
+            <li>
+              ✨ I created a projection of the improved User Journey Map to
+              visualize how the new solution supports a smoother and more secure
+              payment experience.
+            </li>
+          </ul>
+        </div>
+
+        {/* Kanan: Ilustrasi (1/3 Lebar) */}
+        <div className="flex-[1] flex justify-center items-center">
+          <div className="w-[220px] h-[220px] md:w-[280px] md:h-[280px] bg-gray-200/40 rounded-lg flex items-center justify-center text-gray-400 italic text-sm">
+            <DotLottieReact
+              src="https://lottie.host/2d704593-4d5a-4461-b4fe-4a2ff453aff1/UhQ3Homd6T.lottie"
+              loop
+              autoplay
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* 🧩 SECTION: THANK YOU & METADATA (Slide-Style) */}
+      <section className="bg-[#e6eaed] text-[var(--color-warna-gelap)] px-6 md:px-20 py-10 md:py-16 flex flex-col md:flex-row items-start justify-between gap-10 md:gap-16 rounded-2xl shadow-md transition-all duration-300 hover:shadow-lg hover:scale-[1.01]">
+        {/* Kiri: Thank You + CTA */}
+        <div className="flex-1 space-y-4 md:space-y-6">
+          <h3 className="text-3xl md:text-4xl font-extrabold text-[#ff0044]">
+            Thank You for Reading 🙏
+          </h3>
+
+          <p className="text-sm md:text-md text-[var(--color-warna-gelap)] leading-relaxed">
+            This case study reflects my approach to identifying user needs,
+            exploring product opportunities, and designing meaningful, practical
+            solutions.
+            <br />
+            <br />
+            Feel free to reach out if you'd like to discuss, collaborate, or
+            share thoughts about this project.
+          </p>
+
+          <Link
+            to="/contact"
+            className="inline-block mt-4 bg-[var(--color-warna-hijau)] text-[var(--color-warna-putih)] font-semibold px-6 py-2 rounded-lg shadow-md shadow-[var(--color-warna-hijau)]/30 hover:bg-[var(--color-warna-biru)] transition-all duration-300 ease-in-out"
+          >
+            Get in Touch →
+          </Link>
+        </div>
+
+        {/* Kanan: Metadata */}
+        <div className="flex-1 bg-[var(--color-warna-putih)] p-6 md:p-8 rounded-xl border border-[var(--color-warna-abu)]/30 shadow-sm">
+          <h4 className="text-[#ff0044] font-bold text-lg mb-4 uppercase tracking-wide">
+            Project Info
+          </h4>
+          <ul className="space-y-3 text-[var(--color-warna-gelap)] text-sm md:text-base">
+            <li>
+              <span className="font-semibold">📅 Created:</span> 10 October 2025
+            </li>
+            <li>
+              <span className="font-semibold">💼 Role:</span> Product Manager /
+              UX Researcher
+            </li>
+            <li>
+              <span className="font-semibold">🧰 Tools:</span> Figma, Notion,
+              Lottie, ReactJS, Canva
+            </li>
+
+            <li>
+              <span className="font-semibold">🏷️ Category:</span> Product
+              Improvement / Digital Banking
+            </li>
+            <li>
+              <span className="font-semibold">🔗 Type:</span> Personal Learning
+              Exploration
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      {/* Footer Credit */}
+      <div className="text-center py-6 text-sm text-[var(--color-warna-abu)]">
+        © {new Date().getFullYear()} Bayu Erfan. All Rights Reserved.
+      </div>
     </>
   );
 }

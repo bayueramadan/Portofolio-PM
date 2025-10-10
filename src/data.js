@@ -25,7 +25,7 @@ export const highlightProjects = [
     slug: "fintrack",
     title: "Visualizing Personal Finance Insights",
     company: "Fintrack",
-    category: "Metrics",
+    category: "Metrics & Impact",
     summary:
       "Developing an interactive dashboard to help users understand spending habits and achieve savings goals.",
     cover: "/images/projects/fintrack/fintrack-cover.jpg",

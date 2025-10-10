@@ -74,14 +74,18 @@ function Home({ startAnimation }) {
               to={`/project/${p.slug}`}
               className={`group block rounded-xl border-2 p-6 bg-warna-putih shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300
         ${
-          p.category === "Metrics"
+          p.category === "Metrics & Impact"
             ? "border-green-500"
             : p.category === "Product Improvement"
-            ? "border-orange-400"
+            ? "border-pink-500"
             : p.category === "Product Design"
-            ? "border-blue-400"
-            : p.category === "RCA"
-            ? "border-yellow-400"
+            ? "border-blue-500"
+            : p.category === "RCA (Root Cause Analysis)"
+            ? "border-yellow-500"
+            : p.category === "Guestimates / Strategy"
+            ? "border-purple-500"
+            : p.category === "PM Toolkit (Resources)"
+            ? "border-orange-500"
             : "border-[var(--color-warna-abu)]/40"
         }`}
             >
