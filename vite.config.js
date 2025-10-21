@@ -11,7 +11,7 @@ export default defineConfig({
     tailwindcss(),
     SitemapPlugin({
       hostname: "https://www.bayuerfan.com",
-      routes: ["/", "/project", "/project/bank-jago", "/about", "/contact"],
+      routes: ["/", "/project", "/about", "/contact"],
     }),
   ],
 });
