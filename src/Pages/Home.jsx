@@ -218,7 +218,7 @@ function Home({ startAnimation }) {
               </p>
               <p>
                 <span className="font-semibold">Location:</span> Malang,
-                Indonesia
+                Indonesia. 65164
               </p>
             </div>
           </div>

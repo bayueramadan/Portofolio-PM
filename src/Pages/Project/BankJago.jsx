@@ -132,7 +132,7 @@ export default function BankJago() {
 
         {/* Petunjuk scroll (muncul hanya di mobile) */}
         <p className="text-sm text-gray-500 mt-4 md:hidden italic">
-          👉 Geser ke kanan untuk melihat detail lainnya
+          👉 Swipe right to explore the full journey
         </p>
       </section>
 
@@ -315,7 +315,7 @@ export default function BankJago() {
 
         {/* Petunjuk scroll (muncul hanya di mobile) */}
         <p className="text-sm text-gray-500 mt-4 md:hidden italic">
-          👉 Geser ke kanan untuk melihat detail lainnya
+          👉 Swipe right to explore the full journey
         </p>
       </section>
 
@@ -394,7 +394,7 @@ export default function BankJago() {
 
         {/* Kanan: Ilustrasi (1/3 Lebar) */}
         <div className="flex-[1] flex justify-center items-center">
-          <div className="w-[220px] h-[220px] md:w-[280px] md:h-[280px] bg-gray-200/40 rounded-lg flex items-center justify-center text-gray-400 italic text-sm">
+          <div className="w-[220px] h-[220px] md:w-[280px] md:h-[280px]  rounded-lg flex items-center justify-center text-gray-400 italic text-sm">
             <DotLottieReact
               src="https://lottie.host/2d704593-4d5a-4461-b4fe-4a2ff453aff1/UhQ3Homd6T.lottie"
               loop
@@ -408,7 +408,7 @@ export default function BankJago() {
       <section className="bg-[#e6eaed] text-[var(--color-warna-gelap)] px-6 md:px-20 py-10 md:py-16 flex flex-col md:flex-row items-start justify-between gap-10 md:gap-16 rounded-2xl shadow-md transition-all duration-300 hover:shadow-lg hover:scale-[1.01]">
         {/* Kiri: Thank You + CTA */}
         <div className="flex-1 space-y-4 md:space-y-6">
-          <h3 className="text-3xl md:text-4xl font-extrabold text-[#ff0044]">
+          <h3 className="text-2xl md:text-3xl font-extrabold text-[#ff0044]">
             Thank You for Reading 🙏
           </h3>
 
@@ -445,7 +445,7 @@ export default function BankJago() {
             </li>
             <li>
               <span className="font-semibold">🧰 Tools:</span> Figma, Notion,
-              Lottie, ReactJS, Canva
+              Canva, VS Code
             </li>
 
             <li>
