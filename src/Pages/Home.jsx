@@ -4,12 +4,36 @@ import CustomCursor from "../components/CustomCursor";
 import SplitText from "../Animation/Splittext";
 import { Link } from "react-router-dom";
 import ColorBends from "../Animation/ColorBends";
+import Accordion from "../Animation/Accordion";
 
 const handleAnimationComplete = () => {
   console.log("All letters have animated!");
 };
 
 function Home({ startAnimation }) {
+  const accordionItems = [
+    {
+      title: "What inspired this project?",
+      content:
+        "This case study was inspired by the need to make digital payments faster and safer. The focus was on enhancing QRIS transactions with a smooth biometric experience.",
+    },
+    {
+      title: "What was your role?",
+      content:
+        "I led the user research, UX design, and product validation process. My goal was to balance simplicity with trust in digital financial experiences.",
+    },
+    {
+      title: "Tools & methods used?",
+      content:
+        "I used Figma for prototypes, Notion for documentation, and React + TailwindCSS for development. Interviews and usability testing shaped the final design.",
+    },
+    {
+      title: "Key learnings?",
+      content:
+        "Even small interaction improvements can significantly impact user satisfaction and perceived speed. Understanding the user journey is crucial.",
+    },
+  ];
+
   return (
     <>
       {/* Custom Cursor */}
@@ -26,7 +50,7 @@ function Home({ startAnimation }) {
               "#ffb347", // soft orange hue
             ]}
             rotation={-60}
-            speed={0.3}
+            speed={0.2}
             autoRotate={2}
             scale={1.3}
             frequency={0.83}
@@ -160,11 +184,11 @@ function Home({ startAnimation }) {
         </div>
       </div>
       {/* Tentang Section */}
-      <section className="w-full py-10 container mx-auto px-4 mt-20">
+      <section className="w-full py-10 container mx-auto px-4 my-10">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-12 shadow-lg">
             {/* Kiri: Teks */}
-            <div className="rounded-t-md md:rounded-none md:rounded-l-md md:col-span-7 flex flex-col justify-center bg-warna-gelap text-white p-6  h-auto md:h-[450px]">
+            <div className="rounded-t-md md:rounded-none md:rounded-l-md md:col-span-7 flex flex-col justify-center bg-white text-black p-6  h-auto md:h-[450px]">
               <p className="text-lg leading-relaxed mb-6 break-words text-justify">
                 Detail-oriented professional with 2 years of experience in
                 manufacturing operations at PT Denso Indonesia, where I focused
@@ -176,7 +200,7 @@ function Home({ startAnimation }) {
               </p>
               <div className="flex justify-center">
                 <Link
-                  className="mt-10 bg-warna-gelap  border border-warna-hijau  text-warna-hijau font-semibold  px-5 py-2 rounded-lg  transition-all duration-300 ease-in-out hover:bg-warna-hijau  hover:text-white hover:scale-105 hover:shadow-md hover:shadow-lime-500/40  active:scale-95 hover:border--5"
+                  className="mt-10 bg-warna-hijau text-warna-putih font-semibold px-5 py-2 rounded-lg transition-all duration-300 ease-in-out hover:bg-warna-biru hover:shadow-md hover:shadow-warna-biru/40 hover:scale-105 active:scale-95"
                   to={"/about"}
                 >
                   Get to Know Me <i className="ri-user-3-line"></i>
@@ -185,7 +209,7 @@ function Home({ startAnimation }) {
             </div>
 
             {/* Kanan: Gambar */}
-            <div className="rounded-b-md md:rounded-none md:rounded-r-md md:col-span-5 flex items-center justify-center  bg-warna-gelap  h-auto md:h-[450px]">
+            <div className="rounded-b-md md:rounded-none md:rounded-r-md md:col-span-5 flex items-center justify-center  bg-white text-black  h-auto md:h-[450px]">
               <DotLottieReact
                 src="https://lottie.host/198fa489-43ad-400e-b272-5668e10e1659/cfxs4z6ing.lottie"
                 loop
@@ -196,58 +220,65 @@ function Home({ startAnimation }) {
         </div>
       </section>
       {/* Kontak Section */}
-      <div className=" py-16 px-8 container mx-auto">
-        <div className=" mx-auto grid grid-cols-1 md:grid-cols-12 gap-12 bg-warna-putih rounded-md shadow-xl/20 p-10 shadow-warna-hijau">
-          {/* Form Section */}
-          <div className="md:col-span-7">
-            <h2 className="text-3xl font-bold text-black mb-6">Contact Me</h2>
-            <form className="space-y-5">
-              <input
-                type="text"
-                placeholder="Type Your Name.."
-                className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none text-warna-gelap"
-              />
-              <input
-                type="email"
-                placeholder="Type Your Email.."
-                className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none text-warna-gelap"
-              />
-              <textarea
-                placeholder="Type Your Message"
-                rows="6"
-                className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none text-warna-gelap"
-              ></textarea>
-              <button
-                type="submit"
-                cursor="pointer"
-                className="w-full cursor-pointer md:w-auto mt-10 bg-warna-hijau text-warna-putih font-semibold px-5 py-2 rounded-lg transition-all duration-300 ease-in-out hover:bg-warna-biru hover:shadow-md hover:shadow-warna-biru/40 hover:scale-105 active:scale-95"
-              >
-                Send Message <i className="ri-mail-send-line"></i>
-              </button>
-            </form>
-          </div>
+      <div className="bg-warna-biru rounded-t-3xl py-20">
+        <div className=" pb-16 px-8 container mx-auto">
+          <div className=" mx-auto grid grid-cols-1 md:grid-cols-12 gap-12 bg-warna-abu rounded-3xl p-10 shadow-[11px_11px_16px_#828282,-11px_-11px_16px_#dedede]">
+            {/* Form Section */}
+            <div className="md:col-span-7">
+              <h2 className="text-3xl font-bold text-black mb-6">Contact Me</h2>
+              <form className="space-y-5">
+                <input
+                  type="text"
+                  placeholder="Type Your Name.."
+                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none text-warna-gelap"
+                />
+                <input
+                  type="email"
+                  placeholder="Type Your Email.."
+                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none text-warna-gelap"
+                />
+                <textarea
+                  placeholder="Type Your Message"
+                  rows="6"
+                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 outline-none text-warna-gelap"
+                ></textarea>
+                <button
+                  type="submit"
+                  cursor="pointer"
+                  className="w-full cursor-pointer md:w-auto mt-10 bg-warna-hijau text-warna-putih font-semibold px-5 py-2 rounded-lg transition-all duration-300 ease-in-out hover:bg-warna-biru hover:shadow-md hover:shadow-warna-biru/40 hover:scale-105 active:scale-95"
+                >
+                  Send Message <i className="ri-mail-send-line"></i>
+                </button>
+              </form>
+            </div>
 
-          {/* Contact Alternatives */}
-          <div className="md:col-span-5 flex flex-col justify-center space-y-5 text-warna-gelap">
-            <p className="text-lg">
-              Interested in working together? Let’s connect. You can fill out
-              the form or reach me directly via LinkedIn or email.
-            </p>
-            <div className="space-y-3">
-              <p>
-                <span className="font-semibold">Email:</span>{" "}
-                hello@bayuerfan.com
+            {/* Contact Alternatives */}
+            <div className="md:col-span-5 flex flex-col justify-center space-y-5 text-warna-gelap">
+              <p className="text-lg">
+                Interested in working together? Let’s connect. You can fill out
+                the form or reach me directly via LinkedIn or email.
               </p>
-              <p>
-                <span className="font-semibold">LinkedIn:</span> Bayu Erfan
-              </p>
-              <p>
-                <span className="font-semibold">Location:</span> Malang,
-                Indonesia. 65164
-              </p>
+              <div className="space-y-3">
+                <p>
+                  <span className="font-semibold">Email:</span>{" "}
+                  hello@bayuerfan.com
+                </p>
+                <p>
+                  <span className="font-semibold">LinkedIn:</span> Bayu Erfan
+                </p>
+                <p>
+                  <span className="font-semibold">Location:</span> Malang,
+                  Indonesia. 65164
+                </p>
+              </div>
             </div>
           </div>
         </div>
+        {/* Accordion Section */}
+        <section className="">
+          {/* Accordion dipanggil di sini */}
+          <Accordion items={accordionItems} />
+        </section>
       </div>
     </>
   );
